@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <!-- 导入模板引擎 -->
+        <script src="../../插件/art.js"></script>
+        <script src="../../插件/jQuery min.js"></script>
+        <title>Document</title>
+        <script>
+            $(function () {
+                //定义过滤器
+                template.defaults.imports.time = function (date) {
+                    var y = date.getFullYear();
+                    var m = date.getMonth() + 1;
+                    var d = date.getDate();
+
+                    return y + "-" + m + "-" + d;
+                };
+                // 定义需要渲染的数据
+                var obj = {
+                    name: "DG",
+                    text: "<h5>原文输出</h5>",
+                    flag: 11,
+                    have: ["循环1", "循环2", "循环3"],
+                    getTime: new Date(),
+                };
+                //调用template 函数
+                var artt = template("art", obj);
+                console.log(artt);
+                // 渲染html结构
+                $(".one").html(artt);
+            });
+        </script>
+    </head>
+    <body>
+        <div class="one"></div>
+        <!-- 定义模板 -->
+        <!-- 模板的html结构，必须写在script标签中，把script标签中的type属性改为text/html,script只能用id，不能用class -->
+        <script type="text/html" id="art">
+            <h1>{{name}}</h1>
+            <!-- 原文输出 -->
+            {{@ text}}
+            <!-- 条件输出 -->
+            <!-- <div>{{if flag>=0}} flag大于0 {{/if}}</div> -->
+            <div>
+                {{if flag===10}}flag等于10{{else if flag>10}}flag大于10{{/if}}
+            </div>
+            <!-- 循环输出 -->
+            <ul>
+                {{each have}}
+                <li>{{$index}}<!--索引号-->,{{$value}}<!--循环内容--></li>
+                {{/each}}
+            </ul>
+            <h3>{{getTime | time}}</h3>
+        </script>
+    </body>
+</html>

@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <script src="../01（简单运动）/动画函数.js"></script>
+        <script src="Carousel figure.js"></script>
+
+        <style>
+            .a1 {
+                width: 700px;
+                height: 450px;
+                background-color: red;
+                position: relative;
+                left: 0px;
+                right: 0px;
+                margin: 0px auto;
+                top: 150px;
+                z-index: 1;
+                overflow: hidden;
+            }
+            .left {
+                width: 250px;
+                height: 450px;
+                background-color: blue;
+                position: absolute;
+                left: 0px;
+                z-index: 4;
+                opacity: 0;
+            }
+            .cleft {
+                width: 125px;
+                height: 450px;
+                background-color: black;
+                opacity: 0.3;
+                display: none;
+                position: absolute;
+                left: 0px;
+                z-index: 5;
+            }
+            .cleft img {
+                width: 22px;
+                height: 32px;
+                position: absolute;
+                top: 203px;
+                left: 50px;
+                z-index: 5;
+            }
+
+            .right {
+                width: 250px;
+                height: 450px;
+                background-color: green;
+                position: absolute;
+                right: 0px;
+                z-index: 4;
+                opacity: 0;
+            }
+            .aright {
+                width: 125px;
+                height: 450px;
+                background-color: black;
+                opacity: 0.3;
+                display: none;
+                position: absolute;
+                right: 0px;
+                z-index: 5;
+            }
+            .aright img {
+                width: 22px;
+                height: 32px;
+                position: absolute;
+                top: 203px;
+                right: 50px;
+                z-index: 5;
+            }
+
+            .circle {
+                list-style-type: none;
+                position: absolute;
+                bottom: 0px;
+                left: 250px;
+                z-index: 5;
+            }
+            .circle li {
+                width: 20px;
+                height: 20px;
+                line-height: 20px;
+                text-align: center;
+                float: left;
+                border: 2px solid white;
+                border-radius: 50px;
+                margin: 0px 5px 0px 5px;
+                z-index: 5;
+            }
+            .color {
+                width: 700px;
+                background: white;
+            }
+
+            .imgs {
+                width: 800%;
+                position: absolute;
+                list-style-type: none;
+                top: -15px;
+                left: -40px;
+                z-index: 1;
+            }
+            .imgs li {
+                float: left;
+            }
+            .imgs img {
+                width: 700px;
+                height: 450px;
+                z-index: 1;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="a1">
+            <!-- 左侧 -->
+            <div class="left"></div>
+            <div class="cleft">
+                <img class="limg" src="images/arrow-prev.png" />
+            </div>
+            <!-- 右侧 -->
+            <div class="right"></div>
+            <div class="aright">
+                <img class="rimg" src="images/arrow-next.png" />
+            </div>
+            <div class="center">
+                <!-- 小圆圈  -->
+                <ol class="circle"></ol>
+
+                <ul class="imgs">
+                    <li><img src="images/focus.jpg" /></li>
+                    <li><img src="images/focus1.jpg" /></li>
+                    <li><img src="images/focus2.jpg" /></li>
+                    <li><img src="images/focus3.jpg" /></li>
+                </ul>
+            </div>
+        </div>
+    </body>
+</html>

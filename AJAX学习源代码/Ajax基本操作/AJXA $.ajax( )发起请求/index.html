@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <script src="../jQuery min.js"></script>
+        <title>Document</title>
+        <script>
+            $(function () {
+                $(".one").on("click", function () {
+                    $.ajax({
+                        type: "get",
+                        url: "http://www.liulongbin.top:3006/api/getbooks",
+                        data: { id: 1 },
+                        success: function (res) {
+                            console.log(res);
+                        },
+                    });
+                });
+                $(".two").on("click", function () {
+                    $.ajax({
+                        type: "post",
+                        url: "http://www.liulongbin.top:3006/api/addbook",
+                        data: {
+                            bookname: "最后一颗子弹",
+                            author: "谷智鑫",
+                            publisher: "北京",
+                        },
+                        success: function (res) {
+                            console.log(res);
+                        },
+                    });
+                });
+            });
+        </script>
+    </head>
+    <body>
+        <button class="one">请求</button>
+        <button class="two">发送</button>
+    </body>
+</html>

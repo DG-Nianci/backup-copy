@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <ul>
+            <li>添加点击事件</li>
+            <li>添加点击事件</li>
+            <li>添加点击事件</li>
+            <li>添加点击事件</li>
+            <li>添加点击事件</li>
+        </ul>
+        <script>
+            //事件委托
+            var oul = document.querySelector("ul");
+            var oli = document.querySelectorAll("li");
+            oul.addEventListener(
+                "click",
+                function (e) {
+                    // alert("hi");
+                    for (var i = 0; i < oli.length; i++) {
+                        oli[i].onclick = function () {
+                            for (var i = 0; i < oli.length; i++) {
+                                oli[i].style.backgroundColor = "";
+                            }
+                            this.style.backgroundColor = "red";
+                        };
+                    }
+                },
+                false
+            );
+        </script>
+    </body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <script src="动画函数.js"></script>
+        <title>Document</title>
+        <style>
+            .one {
+                position: fixed;
+                right: 0;
+                bottom: 100px;
+                width: 40px;
+                height: 40px;
+                text-align: center;
+                line-height: 40px;
+                cursor: pointer;
+                color: #fff;
+            }
+
+            .con {
+                position: absolute;
+                left: 0;
+                top: 0;
+                width: 200px;
+                height: 40px;
+                background-color: purple;
+                z-index: -1;
+            }
+        </style>
+        <script>
+            window.addEventListener("DOMContentLoaded", function () {
+                var one = document.querySelector(".one");
+                var con = document.querySelector(".con");
+                var span = document.querySelector("span");
+                one.addEventListener("mouseover", function () {
+                    simple(con, -160, function () {
+                        one.children[0].innerHTML = "→";
+                    });
+                });
+                one.addEventListener("mouseout", function () {
+                    simple(con, 0, function () {
+                        span.innerHTML = "←";
+                    });
+                });
+            });
+        </script>
+    </head>
+    <body>
+        <div class="one">
+            <span>←</span>
+            <div class="con">问题反馈</div>
+        </div>
+    </body>
+</html>

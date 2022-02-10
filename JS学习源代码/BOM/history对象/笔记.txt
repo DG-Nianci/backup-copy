@@ -1,0 +1,7 @@
+history对象：
+    window对象给我们提供了一个history对象，与浏览器历史进行交互，该对象包含用户（在浏览器窗口中）访问过的URL
+
+history对象方法
+    history.back()              可以后退功能
+    history.forward()           前进功能
+    history.go()                前进后退功能 参数如果是1就前进一个页面，如果是-1就后退一个页面

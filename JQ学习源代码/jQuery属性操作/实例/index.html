@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <script src="../../jQuery min.js"></script>
+        <title>Document</title>
+        <script>
+            $(function () {
+                //checkall 发生改变就把 smallchenck 和 checkall 的复选框 同步和checkall一样
+                $(".checkall").change(function () {
+                    $(".smallchenck,.checkall").prop(
+                        "checked",
+                        $(this).prop("checked")
+                    );
+                });
+                //如果smallchenck发生改变就判断smallchenck选中的个数是否和smallchenck的长度一样，如果一样 checkall就为选中，如果不一样 checkall就不选中
+                $(".smallchenck").change(function () {
+                    if (
+                        //:checked 返回有几个复选框被选中
+                        $(".smallchenck:checked").length ===
+                        $(".smallchenck").length
+                    ) {
+                        $(".checkall").prop("checked", true);
+                    } else {
+                        $(".checkall").prop("checked", false);
+                    }
+                });
+            });
+        </script>
+    </head>
+    <body>
+        <input type="checkbox" class="checkall" />全选
+        <input type="checkbox" class="smallchenck" />
+        <input type="checkbox" class="smallchenck" />
+        <input type="checkbox" class="smallchenck" />
+        <input type="checkbox" class="checkall" />全选
+    </body>
+</html>

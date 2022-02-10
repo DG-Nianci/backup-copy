@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <script src="../../jQuery min.js"></script>
+        <title>Document</title>
+        <style>
+            .one {
+                width: 400px;
+                height: 400px;
+                background: blue;
+                transition: all 0.5s;
+            }
+            .two {
+                width: 300px;
+                height: 300px;
+                background: red;
+                transform: rotate(360deg);
+            }
+        </style>
+        <script>
+            $(function () {
+                //添加类 addClass 相当于追加类名，不影响原先的类名
+                $(".one").click(function () {
+                    // $(this).addClass("two");
+                });
+                //移出类 removeClass
+                $(".one").click(function () {
+                    // $(this).removeClass("two");
+                });
+                //切换类 toggleClass
+                $(".one").click(function () {
+                    $(this).toggleClass("two");
+                });
+            });
+        </script>
+    </head>
+    <body>
+        <div class="one"></div>
+    </body>
+</html>

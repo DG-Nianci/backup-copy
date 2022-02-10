@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <script>
+            // Date() 日期对象 是一个构造函数 必须使用new 来调用日期对象
+            //获取当前时间，必须实例化
+            var time3 = new Date();
+            alert(time3);
+            //1、如果没有参数 返回当前系统时间
+
+            //2、参数常用写法  数字型 2020，12，21 或者 字符串型’2020-12-21‘
+            //数字型写法  通常要比写的大一个月
+            var time1 = new Date(2020, 12, 21);
+            alert(time1);
+            //字符串型写法
+            var time2 = new Date("2021-12-21 8:8:8");
+            console.log(time2);
+
+            //格式化日期 年月日
+            var year1 = new Date();
+            console.log(year1.getUTCFullYear()); //获取当前年份
+            console.log(year1.getMonth() + 1); //获取月份比本月小一 在后面加上一即可
+            console.log(year1.getDate()); //获取日
+            console.log(year1.getDay()); //获取今天是周几 （周日为0）
+
+            //格式化时分秒
+            console.log(year1.getHours()); //时
+            console.log(year1.getMinutes()); //分
+            console.log(year1.getSeconds()); //秒
+            console.log(year1.valueOf()); //总的毫秒
+            console.log(year1.getTime()); //总的毫秒
+            //总的毫秒（简单写法）
+            var hm = +new Date();
+            console.log(hm);
+            //新增的总的毫秒数（低版本不兼容）
+            console.log(Date.now());
+
+            //输出年月日 星期几
+            var year1s = year1.getFullYear();
+            var month = year1.getMonth() + 1;
+            var date = year1.getDate();
+            var arr = [
+                "星期日",
+                "星期一",
+                "星期二",
+                "星期三",
+                "星期四",
+                "星期五",
+                "星期六",
+            ];
+            var day = year1.getDay();
+            console.log(
+                "今天是:" +
+                    year1s +
+                    "年" +
+                    month +
+                    "月" +
+                    date +
+                    "日 " +
+                    arr[day]
+            );
+
+            //封装年月日 星期 时分秒
+            function getTime() {
+                var time = new Date();
+                var year = time.getFullYear();
+                var month = time.getMonth() + 1;
+                var date = time.getDate();
+                var arr = [
+                    "星期日",
+                    "星期一",
+                    "星期二",
+                    "星期三",
+                    "星期四",
+                    "星期五",
+                    "星期六",
+                ];
+                var day = time.getDay();
+                var h = time.getHours();
+                h = h < 10 ? "0" + h : h;
+                var m = time.getMinutes();
+                m = m < 10 ? "0" + m : m;
+                var s = time.getSeconds();
+                s = s < 10 ? "0" + s : s;
+
+                return (
+                    year +
+                    "年" +
+                    month +
+                    "月" +
+                    date +
+                    "日" +
+                    arr[day] +
+                    h +
+                    ":" +
+                    m +
+                    ":" +
+                    s +
+                    "s"
+                );
+            }
+            console.log(getTime());
+        </script>
+    </head>
+    <body></body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <script>
+            //利用函数求任意两个数的和
+            function num(name1, name2) {
+                alert(name1 + name2);
+            }
+            num(5, 5);
+            //利用函数求任意两个数之间的和
+            function sue(obj1, obj2) {
+                sum = 0;
+                for (var i = obj1; i <= obj2; i++) {
+                    sum += i;
+                }
+                alert(sum);
+            }
+            //如果 实参和形参个数一致，则正常输出结果
+            sue(1, 100);
+            //如果 实参个数多余形参的个数，会取到形参的个数
+            sue(1, 100, 1);
+            //如果实参的个数小于形参的个数，则obj2 结果是undefined
+        </script>
+    </head>
+    <body></body>
+</html>

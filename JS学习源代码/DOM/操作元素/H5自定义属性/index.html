@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <div index="1" data-modo="2" data-div-name="10"></div>
+        <script>
+            var odiv = document.querySelector("div");
+            //获取自定义属性（兼容性高）
+            console.log(odiv.getAttribute("index"));
+            console.log(odiv.getAttribute("data-modo"));
+            console.log(odiv.getAttribute("data-div-name"));
+            //设置自定义属性
+            odiv.setAttribute("data-index", 3);
+
+            //新增H5获取自定义属性方法（兼容低），只能用data-开头的
+            //dataset是一个集合里面存放了所有以data开头的自定义属性
+            console.log(odiv.dataset.modo);
+            console.log(odiv.dataset["modo"]);
+            //如果自定义的属性里面有多个用-连接的单词，我们获取的时候采用 驼峰命名法
+            console.log(odiv.dataset.divName);
+        </script>
+    </body>
+</html>

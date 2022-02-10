@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <script>
+            var obj = {
+                name: "周裕鑫",
+                age: "18",
+                sex: "男",
+            };
+            //for...in 遍历对象
+            //使用for in 最好用 k 或者 key
+            //语法格式
+            // for (变量 in 对象) {
+            // }
+
+            for (var k in obj) {
+                console.log(k); //输出变量 得到属性名
+                console.log(obj[k]); // 对象[变量]输出的是 属性值
+            }
+        </script>
+    </head>
+    <body></body>
+</html>

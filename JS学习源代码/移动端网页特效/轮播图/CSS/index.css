@@ -1,0 +1,51 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+.one{
+    width: 750px;
+    height: 150px;
+    background-color: red;
+    position: relative;
+    top: 100px;
+    left: 0px;
+    right: 0px;
+    margin: 0px auto;
+    z-index: 1;
+    overflow: hidden;
+}
+ul{
+    width: 500%;
+    list-style-type: none;
+    z-index: 2;
+    margin-left: -750px;
+    position: absolute;
+    left: 0px;
+    overflow: hidden;
+}
+ul li{
+    width: 750px;
+    float: left;
+}
+ol{
+    z-index: 5;
+    position: absolute;
+    left: 400px;
+    top: 135px;
+    list-style-type: none;
+}
+ol li {
+    width: 5px;
+    height: 5px;
+    border: 2px solid white;
+    border-radius: 5px;
+    float: left;
+    margin-left: 10px;
+    transition: all .3s;
+}
+ol .color{
+    width: 10px;
+    height: 5px;
+    background-color: white;
+    border-radius: 2px;
+}

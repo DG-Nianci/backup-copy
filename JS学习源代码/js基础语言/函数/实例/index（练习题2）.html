@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <script>
+            // //写一个函数，用户输入任意两个数并且可以用任意算术运算
+            // function num() {
+            //     var tc = prompt("请输入+,-,*,/");
+            //     switch (tc) {
+            //         case "+":
+            //             alert(1 + 2);
+            //             break;
+            //         case "-":
+            //             alert(1 - 2);
+            //             break;
+            //         case "*":
+            //             alert(1 * 2);
+            //             break;
+            //         case "/":
+            //             alert(1 / 2);
+            //             break;
+            //     }
+            // }
+            // num();
+            // //写一个函数，用户输入任意两个数比较大小
+            // var p1 = prompt("请输入数字");
+            // var p2 = prompt("请输入数字");
+            // function sum(name1, name2) {
+            //     if (Number(name1) > Number(name2)) {
+            //         return name1;
+            //     } else {
+            //         return name2;
+            //     }
+            // }
+            // var outcome = sum(p1, p2);
+            // alert(outcome);
+            // //写一个函数，三个数比大小
+            // var a = prompt("请输入数字");
+            // var b = prompt("请输入数字");
+            // var c = prompt("请输入数字");
+            // var max = 0;
+            // var arr = [a, b, c];
+            // function aum(one, two, three) {
+            //     for (var i = 0; i < arr.length; i++) {
+            //         if (max < arr[i]) {
+            //             max = arr[i];
+            //         }
+            //     }
+            //     return max;
+            // }
+            // alert(aum(a, b, c));
+            //判断一个属是否为素数
+
+            var d = parseFloat(prompt("输入数字"));
+            function bum(d) {
+                for (var i = 2; i < d; i++) {
+                    if (d % i == 0) {
+                        return "不是是素数";
+                    } else {
+                        return "是素数";
+                    }
+                }
+            }
+            alert(bum(d));
+        </script>
+    </head>
+    <body></body>
+</html>

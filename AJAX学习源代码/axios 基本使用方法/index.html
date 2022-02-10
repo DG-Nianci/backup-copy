@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <script src="./axios.js"></script>
+        <script>
+            window.addEventListener("load", function () {
+                //get请求
+                function get1() {
+                    document
+                        .querySelector(".btn1")
+                        .addEventListener("click", function () {
+                            var url = "http://www.liulongbin.top:3006/api/get";
+                            var paramsObj = { name: "zs", age: 20 };
+                            axios
+                                .get(url, { params: paramsObj })
+                                .then(function (res) {
+                                    console.log(res.data);
+                                });
+                        });
+                }
+                //post请求
+                function post1() {
+                    document
+                        .querySelector(".btn2")
+                        .addEventListener("click", function () {
+                            var url = "http://www.liulongbin.top:3006/api/post";
+                            var params = { location: "北京", address: "顺义" };
+                            axios.post(url, params).then((res) => {
+                                console.log(res.data);
+                            });
+                        });
+                }
+                post1();
+
+                //直接使用axios发起get或者post请求
+                axios({
+                    method: "get",
+                    url: "http://www.liulongbin.top:3006/api/get",
+                    data: {
+                        name: "zs",
+                        age: 20,
+                    },
+                }).then((res) => {
+                    console.log(res.data);
+                });
+                axios({
+                    method: "post",
+                    url: "http://www.liulongbin.top:3006/api/post",
+                    data: {
+                        bookname: "hi",
+                        price: 3333,
+                    },
+                }).then((res) => {
+                    console.log(res.data);
+                });
+            });
+        </script>
+    </head>
+    <body>
+        <button class="btn1">发起GET请求</button>
+        <button class="btn2">发起POST请求</button>
+    </body>
+</html>

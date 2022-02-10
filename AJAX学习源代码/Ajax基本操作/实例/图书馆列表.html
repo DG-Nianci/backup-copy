@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <script src="../jQuery min.js"></script>
+        <link rel="stylesheet" href="../bootstrap.min.css" />
+        <title>Document</title>
+        <style>
+            body {
+                padding: 20px;
+            }
+            .panel-heading {
+                background-color: cornflowerblue !important;
+            }
+            .panel-body {
+                border: 1px solid cornflowerblue !important;
+            }
+            .panel-title {
+                color: white !important;
+            }
+        </style>
+        <script>
+            $(function () {
+                //获取数据
+                function getAPI() {
+                    $.get(
+                        "http://www.liulongbin.top:3006/api/getbooks",
+                        function (res) {
+                            if (res.status !== 200) return alert("获取失败");
+
+                            var rows = [];
+                            $.each(res.data, function (i, ele) {
+                                rows.push(
+                                    "<tr><td>" +
+                                        ele.id +
+                                        "</td><td>" +
+                                        ele.bookname +
+                                        "</td><td>" +
+                                        ele.author +
+                                        "</td><td>" +
+                                        ele.publisher +
+                                        "</td><td><a class='a' href='javascript:;' data-index=" +
+                                        ele.id +
+                                        ">删除</a></td></tr>"
+                                );
+                            });
+                            $(".tbody").empty().append(rows.join(" "));
+                        }
+                    );
+                }
+                getAPI();
+
+                //删除数据
+                $(".tbody").on("click", ".a", function () {
+                    var id = $(this).attr("data-index");
+                    $.get(
+                        "http://www.liulongbin.top:3006/api/delbook",
+                        { id: id },
+                        function (res) {
+                            if (res.status !== 200) {
+                                return alert("删除失败");
+                            }
+                            getAPI();
+                        }
+                    );
+                });
+
+                //添加图书
+                $(".btn").on("click", function () {
+                    var bookn = $(".bookn").val().trim();
+                    var autn = $(".autn").val().trim();
+                    var putn = $(".putn").val().trim();
+                    if (bookn.length <= 0 || autn.length <= 0 || putn <= 0) {
+                        return alert("请输入完整格式");
+                    }
+                    $.post(
+                        "http://www.liulongbin.top:3006/api/addbook",
+                        {
+                            bookname: bookn,
+                            author: autn,
+                            publisher: putn,
+                        },
+                        function (res) {
+                            if (res.status !== 201) return alert("添加失败");
+                            getAPI();
+                            $(".bookn").val(" ");
+                            $(".autn").val(" ");
+                            $(".putn").val(" ");
+                        }
+                    );
+                });
+            });
+        </script>
+    </head>
+    <body>
+        <!-- 头部 -->
+
+        <div class="panel panel-info">
+            <div class="panel-heading">
+                <h3 class="panel-title">添加新图书</h3>
+            </div>
+            <div class="panel-body form-inline">
+                <div class="input-group">
+                    <div class="input-group-addon">书名</div>
+                    <input
+                        type="text"
+                        class="bookn form-control"
+                        id="exampleInputAmount"
+                        placeholder="请输入书名"
+                    />
+                </div>
+                <div class="input-group">
+                    <div class="input-group-addon">作者名</div>
+                    <input
+                        type="text"
+                        class="autn form-control"
+                        id="exampleInputAmount1"
+                        placeholder="请输入作者名"
+                    />
+                </div>
+                <div class="input-group">
+                    <div class="input-group-addon">出版社</div>
+                    <input
+                        type="text"
+                        class="putn form-control"
+                        id="exampleInputAmount2"
+                        placeholder="请输入出版社"
+                    />
+                </div>
+                <button class="btn btn-primary">添加</button>
+            </div>
+        </div>
+
+        <!-- 内容 -->
+
+        <table class="table table-bordered table-hover">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>书名</th>
+                    <th>作者名</th>
+                    <th>地址</th>
+                    <th>操作</th>
+                </tr>
+            </thead>
+
+            <tbody class="tbody"></tbody>
+        </table>
+    </body>
+</html>

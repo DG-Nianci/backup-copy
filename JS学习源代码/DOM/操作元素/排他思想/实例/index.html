@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <style>
+            body {
+                background: url(images/1.jpg);
+            }
+            div {
+                width: 665px;
+                height: 110px;
+                background: white;
+                position: relative;
+                left: 0px;
+                right: 0px;
+                margin: 0px auto;
+            }
+            img {
+                width: 160px;
+                height: 100px;
+                float: left;
+                margin-right: 5px;
+                margin-top: 5px;
+            }
+            #m1 {
+                margin-left: 5px;
+            }
+        </style>
+    </head>
+    <body>
+        <div>
+            <img id="m1" src="images/1.jpg" />
+            <img src="images/2.jpg" />
+            <img src="images/3.jpg" />
+            <img src="images/4.jpg" />
+        </div>
+        <script>
+            var odiv = document.querySelector("div");
+            var bodyEle = document.body;
+            var img = odiv.getElementsByTagName("img");
+            for (var i = 0; i < img.length; i++) {
+                img[i].onclick = function () {
+                    console.log(this.src);
+                    bodyEle.style.backgroundImage = "url(" + this.src + ")";
+                };
+            }
+        </script>
+    </body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <script>
+            //switch 语句也是多分支结构 也可以实现多选1
+            //语法结构
+            //switch 里面的表达式和 case 里面的value 相匹配的时候是 全等（必须是值和数据类型都一致才可以）
+            //如果当前case里面呗有break则不会退出switch 而是继续执行下一个case
+            // switch (表达式) {
+            //     case value1:
+            //         执行语句1;
+            //         break;
+            //     case value2:
+            //         执行语句2;
+            //         break;
+            //     default:
+            //         最后执行的语句;
+            // }
+
+            switch (2) {
+                case 1:
+                    alert("one");
+                    break;
+                case 2:
+                    alert("two");
+                    break;
+                case 3:
+                    alert("three");
+                    break;
+                default:
+                    alert("没有这个数");
+            }
+
+            //执行思路  利用我们表达式的值和 case 后面的选项值进行匹配 如果匹配成功就执行里面的语句
+            //                                                                                      如果都为匹配成功就执行 default 里面的语句
+        </script>
+    </head>
+    <body></body>
+</html>

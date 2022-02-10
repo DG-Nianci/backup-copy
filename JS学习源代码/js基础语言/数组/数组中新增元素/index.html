@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <script>
+            //新增数组长度， 修改length长度   length 属性是可读写的
+            //新加的数组元素为空，默认值为undefined
+            var arr = [1, 2, 3];
+            alert(arr.length);
+            arr.length = 5;
+
+            //新增数组元素，修改索引，追加数组元素
+            var arr1 = [1, 2, 3];
+            arr[3] = 4;
+            console.log(arr);
+            //不能直接给数组名赋值
+            //索引号没被占用的情况下为追加数组元素，如果被占用那就是替换数组元素
+        </script>
+    </head>
+    <body></body>
+</html>

@@ -1,0 +1,4 @@
+offset系列常用于获取元素位置 offsetLeft,offsetTop
+client经常用于获取元素大小 clientWidth,clientHeight
+scroll经常用于获取滚动距离 scrollTop,scrollLeft
+window.pageXoffset 获得页面滚动距离

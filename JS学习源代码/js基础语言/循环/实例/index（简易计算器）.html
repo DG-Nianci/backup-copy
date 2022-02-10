@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <script>
+            do {
+                var tc = prompt(
+                    "欢迎使用简易计算器" +
+                        "\n" +
+                        "1、加法运算" +
+                        "\n" +
+                        "2、减法运算" +
+                        "\n" +
+                        "3、乘法运算" +
+                        "\n" +
+                        "4、除法运算" +
+                        "\n" +
+                        "5、退出"
+                );
+                switch (tc) {
+                    case "1":
+                        jia();
+                        break;
+                    case "2":
+                        set();
+                        break;
+                    case "3":
+                        take();
+                        break;
+                    case "4":
+                        tool();
+                        break;
+                }
+            } while (tc != 5);
+
+            function jia() {
+                var num1 = prompt("请输入第一个数");
+                var num2 = prompt("请输入第二个数");
+                ys = Number(num1) + Number(num2);
+                alert(ys);
+            }
+            function set() {
+                var num1 = prompt("请输入第一个数");
+                var num2 = prompt("请输入第二个数");
+                ys = Number(num1) - Number(num2);
+                alert(ys);
+            }
+            function take() {
+                var num1 = prompt("请输入第一个数");
+                var num2 = prompt("请输入第二个数");
+                ys = Number(num1) * Number(num2);
+                alert(ys);
+            }
+            function tool() {
+                var num1 = prompt("请输入第一个数");
+                var num2 = prompt("请输入第二个数");
+                ys = Number(num1) / Number(num2);
+                alert(ys);
+            }
+        </script>
+    </head>
+    <body></body>
+</html>

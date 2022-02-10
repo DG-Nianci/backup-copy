@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <script>
+            var obj = {
+                name: "可可",
+                type: "阿拉斯加犬",
+                age: "15",
+                color: "红棕色",
+                modo: function () {
+                    var str = prompt(
+                        "请输入你想让他做的事" +
+                            "\n" +
+                            "1、技能一" +
+                            "\n" +
+                            "2、技能二"
+                    );
+
+                    if (str == 1) {
+                        alert("汪汪汪");
+                    } else {
+                        alert("演电影");
+                    }
+                },
+            };
+            obj.modo();
+        </script>
+    </head>
+    <body></body>
+</html>

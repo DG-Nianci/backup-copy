@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <script src="../../jQuery min.js"></script>
+        <title>Document</title>
+        <style>
+            div {
+                width: 300px;
+                height: 300px;
+                background: red;
+            }
+            .color {
+                background: hotpink;
+            }
+        </style>
+        <script>
+            $(function () {
+                //单个注册事件
+                // $("div").click(function () {
+                //     $(this).css("background", "pink");
+                // });
+                // $("div").mouseenter(function () {
+                //     $(this).css("background", "blue");
+                // });
+
+                //多个事件处理 on() 绑定事件
+                //element.on(events,[selector],fn)
+                //events:一个或多个用空格分隔开事件类型
+                //selector:元素的子元素选择器
+                //fn:回调函数，即绑定在元素身上的侦听函数
+                // $("div").on({
+                //     click: function () {
+                //         $(this).css("background", "blue");
+                //     },
+                //     mouseenter: function () {
+                //         $(this).css("background", "pink");
+                //     },
+                //     mouseleave: function () {
+                //         $(this).css("background", "green");
+                //     },
+                // });
+
+                //如果事件处理程序是一样的
+                $("div").on("mouseenter mouseleave", function () {
+                    $(this).toggleClass("color");
+                });
+
+                //on() 可以实现事件委托（委派）
+                $("ul").on("click", "li", function () {
+                    alert(11);
+                }); //click事件是绑定在ul上面的,但是触发对象是ul里面的li
+
+                //on() 可以给未来动态创建的元素添加绑定事件
+                $("ol").on("click", "li", function () {
+                    alert(11);
+                });
+                var li = $("<li>后添加的</li>");
+                $("ol").append(li);
+            });
+        </script>
+    </head>
+    <body>
+        <div></div>
+        <ul>
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+            <li>5</li>
+        </ul>
+        <ol></ol>
+    </body>
+</html>

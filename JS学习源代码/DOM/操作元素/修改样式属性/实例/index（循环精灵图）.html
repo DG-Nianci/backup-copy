@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <style>
+            div {
+                width: 300px;
+                height: 300px;
+                position: relative;
+                left: 0px;
+                right: 0px;
+                margin: 0px auto;
+            }
+            ul {
+                list-style-type: none;
+            }
+            li {
+                width: 30px;
+                height: 30px;
+                background: url(images/sprite.png) no-repeat;
+                float: left;
+                margin: 20px 15px 10px 15px;
+            }
+        </style>
+    </head>
+    <body>
+        <div>
+            <ul>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ul>
+        </div>
+        <script>
+            var oli = document.querySelectorAll("li");
+            elves(oli, 44);
+
+            function elves(obj, num) {
+                for (var i = 0; i < obj.length; i++) {
+                    var index = i * num;
+                    obj[i].style.backgroundPosition = "0 -" + index + "px";
+                }
+            }
+        </script>
+    </body>
+</html>

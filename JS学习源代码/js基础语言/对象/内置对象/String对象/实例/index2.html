@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <script>
+            var str = "abaasdffggghhjjkkgfddsssss3444343";
+            console.log(str.length);
+            console.log(str.charAt(0));
+            if (str.indexOf("b" == -1)) {
+                alert("没有b这个字符");
+            } else {
+                alert("有b这个字符");
+            }
+            console.log(str.replace("g", "22"));
+            console.log(str.substr(1, 5));
+            var num = 0;
+            var tex = {};
+            for (var i = 0; i < str.length; i++) {
+                var text = str.charAt(i);
+                if (tex[text]) {
+                    tex[text]++;
+                } else {
+                    tex[text] = 1;
+                }
+            }
+            console.log(tex);
+            var cha = "";
+            for (var k in tex) {
+                if (tex[k] > num) {
+                    num = tex[k];
+                    cha = k;
+                }
+            }
+            console.log(num);
+            console.log(cha);
+        </script>
+    </head>
+    <body></body>
+</html>

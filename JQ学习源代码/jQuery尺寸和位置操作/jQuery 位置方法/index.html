@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <script src="../../jQuery min.js"></script>
+        <title>Document</title>
+        <style>
+            * {
+                margin: 0;
+                padding: 0;
+            }
+
+            .father {
+                width: 400px;
+                height: 400px;
+                background-color: pink;
+                margin: 100px;
+                overflow: hidden;
+                position: relative;
+            }
+
+            .son {
+                width: 150px;
+                height: 150px;
+                background-color: purple;
+                position: absolute;
+                left: 10px;
+                top: 10px;
+            }
+        </style>
+        <script>
+            $(function () {
+                //1.获取设置距离文档的位置（偏移） offset 返回的值是元素距离文档的偏移坐标，和父级没有关系
+                console.log($(".son").offset()); //获取son距离文档的距离，返回的是一个对象
+                console.log($(".son").offset().top); //直接获取son距离文档头部的距离，返回的是一个数字型
+                $(".son").offset({
+                    top: 200,
+                    left: 200,
+                }); //修改son距离文档top和left值为200
+                //2.获取距离带有定位父级位置（偏移） position   如果没有带有定位的父级，则以文档为准
+                console.log($(".son").position()); //获取son距离父级盒子的坐标，只能获取不能修改
+            });
+        </script>
+    </head>
+    <body>
+        <div class="father">
+            <div class="son"></div>
+        </div>
+    </body>
+</html>

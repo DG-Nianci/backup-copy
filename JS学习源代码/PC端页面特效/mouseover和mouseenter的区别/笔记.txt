@@ -1,0 +1,7 @@
+mouseover事件:
+    mouseover鼠标经过自身盒子会触发，经过子盒子也会触发
+mouseenter事件
+    mouseenter只会经过自身盒子触发
+    mouseenter不会冒泡
+mouseleave事件
+    mouseleave搭配mouseenter事件使用，也同样不会冒泡

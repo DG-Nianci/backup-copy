@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <style>
+            * {
+                padding: 0px;
+            }
+            .nav {
+                width: 500px;
+                height: 50px;
+                line-height: 50px;
+                background: red;
+                position: relative;
+                left: 0px;
+                right: 0px;
+                margin: 0px auto;
+            }
+            .nav ul {
+                list-style-type: none;
+            }
+            .nav ul li {
+                float: left;
+                width: 100px;
+                height: 50px;
+                text-align: center;
+                background: blue;
+            }
+            #n1 {
+                width: 500px;
+                height: 100px;
+                background: black;
+                position: relative;
+                left: 0px;
+                right: 0px;
+                margin: 0px auto;
+                display: none;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="nav">
+            <ul>
+                <li><a href="">1</a></li>
+                <li><a href="">2</a></li>
+                <li><a href="">3</a></li>
+                <li><a href="">4</a></li>
+                <li><a href="">5</a></li>
+            </ul>
+        </div>
+        <div id="n1"></div>
+        <script>
+            var oli = document.querySelectorAll("li");
+            var odiv = document.getElementById("n1");
+            for (var i = 0; i < oli.length; i++) {
+                oli[i].onmouseover = function () {
+                    odiv.style.display = "block";
+                };
+                oli[i].onmouseout = function () {
+                    odiv.style.display = "none";
+                };
+            }
+        </script>
+    </body>
+</html>

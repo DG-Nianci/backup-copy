@@ -1,0 +1,6 @@
+classList属性：
+    classList属性是返回元素类名（IE10以上支持）
+    该属性用于在元素中添加，移出及切换CSS类
+    添加类：element.classList.add("类名")，是在后面追加类名不会覆盖以前的类名（前面不需要加.）
+    移除类：element.classList.remove("类名")
+    切换类：element.classList.toggle("类名")

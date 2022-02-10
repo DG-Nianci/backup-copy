@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <script src="../../jQuery min.js"></script>
+        <title>Document</title>
+        <script>
+            $(function () {
+                //$.extend([deep],target,object1,[objectN])
+                //deep:如果设置为true为深拷贝，默认为false浅拷贝
+                //浅拷贝是把拷贝的对象复杂数据类型中的地址拷贝给目标对象，修改目标对象会影响被拷贝对象
+                //深拷贝是完全克隆（拷贝的对象，而不是地址），修改目标对象不会影响拷贝对象
+                //target:要拷贝的目标对象
+                //object1:待拷贝到第一个对象的对象
+                var arr = {
+                    id: 00,
+                    num: {
+                        name: "GOD",
+                    },
+                };
+                var obj = {
+                    id: 01,
+                    name: "DG",
+                    num: {
+                        sum: 60,
+                    },
+                };
+                // $.extend(arr, obj); //会覆盖要拷贝目标对象和拷贝对象相同的数据
+                // console.log(arr);
+                //浅拷贝
+                // arr.num.sum = 20;
+                // console.log(arr);
+                // console.log(obj);
+                //深拷贝
+                $.extend(true, arr, obj);
+                arr.num.sum = 30;
+                console.log(arr);
+                console.log(obj);
+            });
+        </script>
+    </head>
+    <body></body>
+</html>

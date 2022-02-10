@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <style>
+            input {
+                width: 300px;
+                height: 40px;
+                line-height: 40px;
+                border: 1px solid #ccc;
+                border-radius: 50px;
+                margin: 0px auto;
+                padding: 10px;
+                outline: none;
+            }
+            img {
+                width: 40px;
+                height: 40px;
+                position: relative;
+                top: 17px;
+                left: -65px;
+            }
+            ::placeholder {
+                color: #ccc;
+            }
+        </style>
+    </head>
+    <body>
+        <div>
+            <input type="text" id="text" placeholder="请输入账号" />
+        </div>
+        <div>
+            <input type="password" id="pass" placeholder="请输入密码" />
+            <img src="images/close.png" />
+        </div>
+        <script>
+            var pass = document.getElementById("pass");
+            var img = document.querySelector("img");
+
+            var flag = 0;
+            img.onclick = function () {
+                if (flag == 0) {
+                    pass.type = "text";
+                    this.src = "images/open.png";
+                    flag++;
+                } else {
+                    pass.type = "password";
+                    this.src = "images/close.png";
+                    flag--;
+                }
+            };
+        </script>
+    </body>
+</html>

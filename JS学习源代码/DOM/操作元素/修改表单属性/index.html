@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <button>按钮</button>
+        <input type="text" value="输入内容" />
+        <script>
+            //表单里面的值是通过value来进行修改的
+            //innerHTMl是修改普通盒子里面的内容
+            //this 指向的是事件函数调用者
+            var btn = document.querySelector("button");
+            var text = document.querySelector("input");
+            btn.onclick = function () {
+                text.value = "yes";
+                this.disabled = true;
+            };
+        </script>
+    </body>
+</html>

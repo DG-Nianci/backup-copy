@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <style>
+            div {
+                width: 200px;
+                height: 200px;
+                background-color: skyblue;
+                position: absolute;
+            }
+        </style>
+        <script>
+            window.addEventListener("DOMContentLoaded", function () {
+                var odiv = document.querySelector("div");
+                simple(odiv, 400, function () {
+                    odiv.style.backgroundColor = "red";
+                });
+
+                function simple(obj, target, callback) {
+                    clearInterval(obj.time);
+                    obj.time = setInterval(function () {
+                        var speed = (target - obj.offsetLeft) / 10;
+                        speed =
+                            speed > 0 ? Math.ceil(speed) : Math.floor(speed);
+                        if (obj.offsetLeft == target) {
+                            clearInterval(obj.time);
+                            if (callback) {
+                                callback();
+                            }
+                        }
+                        obj.style.left = obj.offsetLeft + speed + "px";
+                    }, 15);
+                }
+                //匀速动画就是 目标当前位置+固定的值
+                //缓速动画就是 目标当前位置+变化的值（目标值-现在的位置）/10
+            });
+        </script>
+    </head>
+    <body>
+        <div></div>
+    </body>
+</html>

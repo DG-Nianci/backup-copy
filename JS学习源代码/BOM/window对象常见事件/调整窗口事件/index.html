@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <style>
+            div {
+                width: 200px;
+                height: 200px;
+                background-color: red;
+            }
+        </style>
+        <script>
+            window.addEventListener("DOMContentLoaded", function () {
+                var odiv = document.querySelector("div");
+                //onresize 只要窗口大小发生改变就会触发该事件
+                window.addEventListener("resize", function () {
+                    console.log("改变");
+                    //获取当前窗口宽度
+                    console.log(window.innerWidth);
+                    //如果页面宽度小于800div隐藏
+                    if (window.innerWidth <= 800) {
+                        odiv.style.display = "none";
+                    } else {
+                        odiv.style.display = "block";
+                    }
+                });
+            });
+        </script>
+    </head>
+    <body>
+        <div></div>
+    </body>
+</html>

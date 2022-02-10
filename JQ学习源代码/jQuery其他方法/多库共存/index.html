@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <script src="../../jQuery min.js"></script>
+        <title>Document</title>
+        <script>
+            $(function () {
+                //解决多库冲突的情况
+                //1.如果 $ 符号冲突，我们可以使用 jQuery
+                console.log(jQuery("div"));
+                //2.让jQuery 释放对 $符号的控制权，让用户自己定义
+                var JQ = jQuery.noConflict();
+                console.log(JQ("span"));
+            });
+        </script>
+    </head>
+    <body>
+        <div></div>
+        <span></span>
+    </body>
+</html>

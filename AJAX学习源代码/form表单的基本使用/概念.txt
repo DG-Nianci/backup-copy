@@ -1,0 +1,44 @@
+什么是表单：
+    表单在网页中主要负责数据采集功能，HTML中<form>标签，就是用于采集用用户输入的信息，并通过<form>标签的提交操作，把采集到的信息提交到服务器端进行处理
+
+表单的组成：
+    表单组成分为三部分  表单标签、表单域、表单提交按键
+
+<form>标签的属性：
+<form>标签用来采集数据，<form>标签的属性则是用来规定如何把采集到的数据法送到服务器
+
+    action
+        action:用来规定当提交表单时，向何处发送表单数据
+        action:只应该是后端提供的一个URL地址，这个URL地址专门负责接收表单提交过来的数据
+        当<form>表单在未指定action属性值的情况下，action的默认值为当前页面的URL地址
+        当提交表单后，页面会立即跳转到action属性指定的URL地址
+
+    target
+        target:用来规定在何处打开 action URL
+        他的可选值有5个，在默认情况下，target的值是_self，表示在相同的框架中打开 action URL
+        _blank           在新窗口中打开
+        _self            默认。在相同的框架中打开
+        _parent          在父框架集中打开
+        _top             在整个窗口中打开
+        framename        在指定的框架中打开
+
+    method
+        method:用来规定以何种方式把表单提交到action URL
+        它的可选值有两个，分别是get和post
+        默认情况下，method的值为get，表示通过URL地址的形式，把表单数据提交到action URL
+        get方式适合用来提交少量的、简单的数据
+        post方式适合用来提交大量的、复杂的、或包含文件上传的数据
+
+    enctype
+        enctype 属性用来规定在发送表单数据之前如何对数据进行编码
+        它的可选值有三个，默认情况下，enctype的值为application/x-www-from-urlencoded,表示在发送前编码所有的字符
+        application/x-www-from-urlencoded:在发送前编码所有字符
+        multipart/form-data:不对字符编码，在使用包含文件上传空间的表单时必须使用该值
+        text/plain:空格转换为“+”加号，但不对特殊字符编码
+
+表单同步提交：
+    通过点击按钮，触发表单提交的操作，从而使得网页跳转到action URL的行为，叫做表单的同步提交
+
+表单同步提交的缺点：
+    1、表单同步提交后，整个页面会发生跳转，跳转到action URL 所指向的地址，用户体验很差
+    2、表单同步提交后，页面之前的状态和数据会丢失

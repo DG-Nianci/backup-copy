@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <script>
+            window.addEventListener('DOMContentLoaded',function(){
+                if((navigator.userAgent.match(/(phon|pad|pod|iphone|ios|iPad|Android|Mobile|BlackBerry|IEMobile|MQQBrowser|JUC|Fennec|wOSBrowser|BrowserNG|WebOS|Symbian|Windows phone))/i))
+                {
+                    window.location.href="";//手机端
+                }
+                else{
+                    window.location.href="";//PC端
+                }
+            })
+        </script>
+    </head>
+    <body></body>
+</html>

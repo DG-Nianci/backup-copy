@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <script src="../../jQuery min.js"></script>
+        <title>Document</title>
+        <style>
+            div {
+                width: 200px;
+                height: 200px;
+                background: red;
+            }
+        </style>
+        <script>
+            $(function () {
+                //修改单一属性
+                // $("div").css("width", "300px"); //属性和属性值必须加引号，数字可以不加引号和单位
+
+                //修改多个属性，以对象的形式来做修改
+                $("div").css({
+                    width: 300,
+                    height: 300,
+                    backgroundColor: "blue",
+                    //以对象的形式修改属性可以不加引号，属性值必须有引号，数字不用加引号和单位，多个属性间用逗号隔开
+                    //如果式复合属性要用驼峰命名法
+                });
+            });
+        </script>
+    </head>
+    <body>
+        <div></div>
+    </body>
+</html>

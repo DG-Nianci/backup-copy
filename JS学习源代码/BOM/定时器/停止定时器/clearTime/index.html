@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <script>
+            window.addEventListener("DOMContentLoaded", function () {
+                var btn = document.querySelector("button");
+                var time = setTimeout(function () {
+                    console.log("爆炸了");
+                }, 3000);
+                btn.onclick = function () {
+                    //clearTime(定时器名称)
+                    //方法取消了先前通过调用 setTimeout() 建立的定时器
+                    //window 可以省略
+                    clearTimeout(time);
+                };
+            });
+        </script>
+    </head>
+    <body>
+        <button>停止</button>
+    </body>
+</html>

@@ -1,0 +1,10 @@
+三种动态创建元素的写法：
+    document.write()
+        是直接当内容写入页面中的内容流，但文档流执行完毕，则他会导致页面全部重绘
+    element.innerHTML
+        是将内容写入某个DOM节点，不会导致页面重绘
+    区别：创建多个元素效率更高（不要拼接字符，采取数组形式拼接），结构稍微复杂
+    document.createElement()
+        创建多个元素效率稍微低一点，但是结构清晰
+
+不同浏览器下，innerHTML效率要比document.createElement效率要高

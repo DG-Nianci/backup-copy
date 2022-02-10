@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <script src="../../jQuery min.js"></script>
+        <title>Document</title>
+        <style>
+            div {
+                width: 300px;
+                height: 300px;
+                background-color: red;
+            }
+        </style>
+        <script>
+            $(function () {
+                //自动触发事件
+                $("div").on("click", function () {
+                    alert(11);
+                });
+                //1.简写形式    元素.事件();
+                // $("div").click();
+                //2.自动触发    元素.trigger('事件')
+                // $("div").trigger("click");
+                //3.自动触发（不会触发元素的默认行为）元素.triggerHandler('事件')
+                $("div").triggerHandler("click");
+                $("input").on("focus", function () {
+                    $(this).val("hi");
+                });
+                $("input").triggerHandler("focus");
+            });
+        </script>
+    </head>
+    <body>
+        <div></div>
+        <input type="text" />
+    </body>
+</html>

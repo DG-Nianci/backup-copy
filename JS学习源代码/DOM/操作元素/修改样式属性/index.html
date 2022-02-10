@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <style>
+            div {
+                width: 200px;
+                height: 200px;
+                background: red;
+            }
+        </style>
+    </head>
+    <body>
+        <div></div>
+        <script>
+            //js里面的样式采取驼峰命名法
+            //js修改style样式操作，产生行内样式，权限比较高
+            var odiv = document.querySelector("div");
+            odiv.onclick = function () {
+                odiv.style.background = "pink";
+                this.style.width = "500px";
+            };
+        </script>
+    </body>
+</html>

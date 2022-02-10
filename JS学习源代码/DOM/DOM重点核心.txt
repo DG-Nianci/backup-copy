@@ -1,0 +1,46 @@
+DOM重点核心
+    文档对象模型（Document Object Model，简称DOM），是WC3组织推荐的处理可扩展标记语言（HTML或XML）的标准 编程接口
+
+    WC3已经定义了一系列的DOM接口，通过这些DOM接口可以改变网页的内容、结构和样式
+
+    1、对于JavaScript,为了能够是使JavaScript操作HTML，JavaScript就有了一条自己的DOM编程接口
+    2、对于HTML，DOM使得HTML形成一颗DOM树，包含文档、元素、节点
+
+关于DOM操作，我们主要针对于元素的操作，主要有创建、增、删、改、查、属性操作、事件操作。
+    1、创建：
+        document.write
+        innerHTML   (用数组写比用字符拼接要快，用数组写innerHTMl是最快的)
+        createElement
+    2、增：
+        appendChild（在末尾添加一个元素）
+        insertBefore（可以在相应位置前添加元素）
+    3、删：
+        removeChild（删除某一个元素）
+    4、改：
+        主要修改DOM的元素属性、DOM元素的内容、属性、表单的值等
+        修改元素属性：src、href、title等
+        修改普通元素内容：innerHTML、innerText
+        修改表单元素：value、type、disabled等
+        修改元素样式：style、className（修改样式比较多时可以使用）
+    5、查：
+        主要获取查询DOM的元素
+        DOM提供的API方法：getElementById、getElementByTagName（古老用法，不推荐）
+        H5提供的新方法：querySelector、querySelectorAll（推荐使用）
+        利用节点操作获取元素：获取父级(parentNode)、获取子级(children)、获取兄弟节点(previousElementSibling、nextElementSibling)（推荐使用）
+    6、属性操作
+        主要针对于自定义属性
+        setAttribute：设置DOM的属性值
+        getAttribute：得到DOM的属性值
+        removeAttribute:移出属性
+    7、事件操作
+        给元素注册事件，采取 事件源.事件类型=事件处理程序
+        鼠标事件：
+        onclick                                 鼠标点击左键触发
+        onmouseover                       鼠标经过触发
+        onmousout                           鼠标离开触发
+        onfocus                                获得鼠标焦点触发
+        onblur                                  失去鼠标焦点触发
+        onmuosemove                      鼠标移动触发
+        onmouseup                          鼠标弹起触发
+        onmousedown                      鼠标按下触发
+

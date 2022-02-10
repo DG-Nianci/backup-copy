@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <script src="../../jQuery min.js"></script>
+        <title>Document</title>
+        <style>
+            .one,
+            .two,
+            .three,
+            .frou {
+                width: 300px;
+                height: 80px;
+                float: left;
+            }
+
+            .off,
+            .add {
+                width: 20px;
+                height: 20px;
+                line-height: 20px;
+                color: black;
+                background-color: blue;
+                float: left;
+                text-align: center;
+            }
+            input {
+                width: 30px;
+                height: 15px;
+                line-height: 15px;
+                float: left;
+                text-align: center;
+            }
+            span {
+                float: left;
+            }
+        </style>
+        <script>
+            $(function () {
+                //减号
+                //点击off 就改变 text value 的值
+                $("div .off").click(function () {
+                    //获取text里面value值，并赋值变量num
+                    var num = $(this).siblings(".text").val();
+                    //如果num等于1 就返回false 不在运行下面代码
+                    if (num == 1) {
+                        return false;
+                    }
+                    //num进行自减1
+                    num--;
+                    //把num重新赋值给当前的off的兄弟元素text
+                    $(this).siblings(".text").val(num);
+                    //计算钱数
+                    //获取每个的价格
+                    var flag = $(this).siblings(".price").text();
+                    //减去前面的￥符号
+                    flag = flag.substr(1);
+                    //计算结果，保留两位小数    toFixed() 保留几位小数
+                    var money = (flag * num).toFixed(2);
+                    //计算结果并复制给最终的总价格
+                    $(this)
+                        .siblings(".results")
+                        .text("￥" + money);
+                });
+
+                //加号
+                $("div .add").click(function () {
+                    var num = $(this).siblings(".text").val();
+                    num++;
+                    $(this).siblings(".text").val(num);
+                    var flag = $(this).siblings(".price").text();
+                    flag = flag.substr(1);
+                    var money = (flag * num).toFixed(2);
+                    $(this)
+                        .siblings(".results")
+                        .text("￥" + money);
+                });
+
+                //文本框发生改变时
+                $("div .text").change(function () {
+                    var num = $(this).val();
+                    var flag = $(this).siblings(".price").text();
+                    flag = flag.substr(1);
+                    var money = (flag * num).toFixed(2);
+                    $(this)
+                        .siblings(".results")
+                        .text("￥" + money);
+                    if (num <= 0) {
+                        alert("数量不能为零");
+                        var num1 = $(this).val("1");
+                        $(this)
+                            .siblings(".results")
+                            .text("￥" + flag);
+                    }
+                });
+            });
+        </script>
+    </head>
+    <body>
+        <div class="one">
+            <span class="price">￥12.80</span>
+            <div class="off">-</div>
+            <input type="text" class="text" value="1" />
+            <div class="add">+</div>
+            <span class="results">￥12.80</span>
+        </div>
+        <div class="two">
+            <span class="price">￥30.50</span>
+            <div class="off">-</div>
+            <input type="text" class="text" value="1" />
+            <div class="add">+</div>
+            <span class="results">￥30.50</span>
+        </div>
+        <div class="three">
+            <span class="price">￥15.90</span>
+            <div class="off">-</div>
+            <input type="text" class="text" value="1" />
+            <div class="add">+</div>
+            <span class="results">￥15.90</span>
+        </div>
+        <div class="frou">
+            <span class="price">￥30.00</span>
+            <div class="off">-</div>
+            <input type="text" class="text" value="1" />
+            <div class="add">+</div>
+            <span class="results">￥30.00</span>
+        </div>
+    </body>
+</html>

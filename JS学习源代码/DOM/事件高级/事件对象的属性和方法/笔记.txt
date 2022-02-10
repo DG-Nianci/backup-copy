@@ -1,0 +1,8 @@
+事件对象的常见属性和方法
+    事件对象.target                                返回触发事件的对象 （标准）
+    事件对象.srcElement                            返回触发事件的对象 （非标准）
+    事件对象.type                                  返回事件的类型
+    事件对象.cancelBubble                          该属性阻止冒泡  非标准只限IE6~8使用
+    事件对象.returnValue                           该属性阻止默认事件（默认行为）非标准只限IE6~8使用
+    事件对象.preventDefault()                      该方法阻止默认事件（默认行为）（标准）
+    事件对象.stopPropagation()                     阻止冒泡  （标准）

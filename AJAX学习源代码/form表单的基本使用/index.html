@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <script src="../插件/jQuery min.js"></script>
+        <link rel="stylesheet" href="../插件/bootstrap.min.css" />
+        <title>Document</title>
+        <script>
+            $(function () {
+                //监听表单的提交事件，第一种方式
+                // $("form").submit(function (e) {
+                //     alert(11);
+                //     e.preventDefault();
+                // });
+
+                //监听表单的提交事件，第二种方式
+                $("form").on("submit", function (e) {
+                    alert(11);
+                    //阻止表单提交的默认行为
+                    e.preventDefault();
+                    //serialize()函数 :可以快速获取表单里面的数据
+                    console.log($(this).serialize());
+                });
+            });
+        </script>
+    </head>
+    <body>
+        <form action="/login">
+            <input type="text" class="text" name="username" />
+            <input type="password" class="password" name="password" />
+            <button>提交</button>
+        </form>
+    </body>
+</html>

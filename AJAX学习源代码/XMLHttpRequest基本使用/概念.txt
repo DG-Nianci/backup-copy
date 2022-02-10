@@ -1,0 +1,12 @@
+XMLHttpRequest概念：
+    XMLHttpRequest(简称xhr)是浏览器提供的JavaScript对象，通过它，可以请求服务器上的数据资源，JQuery中的AJax函数就是基于xhr对象封装出来的
+
+readyState属性：
+    用来表示当前Ajax请求所处的状态，每个Ajax请求必然处于一下状态中的一个
+
+    0       UNSENT                  XMLHttpRequest对象已被创建，但尚未调用open方法
+    1       OPENED                  open()方法已经被调用
+    2       HEADERS_RECEIVED        send()方法已经被调用，响应头也已经被接收
+    3       LOADING                 数据接收中，此时response属性中已经包含部分数据
+    4       DONE                    Ajax请求完成，这意味着数据传输已经彻底完成或失败
+

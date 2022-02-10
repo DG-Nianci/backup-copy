@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <script src="../../jQuery min.js"></script>
+        <title>Document</title>
+        <style>
+            div {
+                width: 150px;
+                height: 300px;
+                background-color: pink;
+                display: none;
+            }
+        </style>
+        <script>
+            $(function () {
+                $("button")
+                    .eq(0)
+                    .click(function () {
+                        //fadeIn() 淡入
+                        $("div").fadeIn(1000);
+                    });
+                $("button")
+                    .eq(1)
+                    .click(function () {
+                        //fadeOut() 淡出
+                        $("div").fadeOut(1000);
+                    });
+                $("button")
+                    .eq(2)
+                    .click(function () {
+                        //fadeToggle() 淡入淡出切换
+                        $("div").fadeToggle(1000);
+                    });
+                $("button")
+                    .eq(3)
+                    .click(function () {
+                        //fadeTo() 改变透明度
+                        //fadeTO([speed],opacity,[easing],[fn])
+                        //speed：以什么速度来变换，必须写
+                        //opacity:更改透明度必须写 取值范围为0~1
+                        $("div").fadeTo(1000, 0.5);
+                    });
+            });
+        </script>
+    </head>
+    <body>
+        <button>淡入效果</button>
+        <button>淡出效果</button>
+        <button>淡入淡出切换</button>
+        <button>修改透明度</button>
+        <div></div>
+    </body>
+</html>

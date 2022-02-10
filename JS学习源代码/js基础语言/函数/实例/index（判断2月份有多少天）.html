@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <script>
+            var num = prompt("请输入年份");
+            function year(a) {
+                if ((a % 4 == 0 && a % 100 != 0) || a % 400 == 0) {
+                    return "二月份有29天";
+                } else {
+                    return "二月份有28天";
+                }
+            }
+            var st = year(num);
+            alert(st);
+        </script>
+    </head>
+    <body></body>
+</html>

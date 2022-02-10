@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <script>
+            //window.onload 事件是等页面全部加载完毕再去执行里面的js
+            //window.onload 传统注册事件方式只能写一次，如果有多个，会一最后一个window.onload为准
+            // window.onload = function () {
+            //     var btn = document.querySelector("button");
+            //     btn.onclick = function () {
+            //         alert("hi");
+            //     };
+            // };
+
+            //使用addEventListener，则没有限制
+            window.addEventListener("load", function () {
+                var btn = document.querySelector("button");
+                btn.onclick = function () {
+                    alert("hi");
+                };
+            });
+
+            //使用DOMContentLoaded
+            //页面里面的DOM加载完就可以运行页面
+            window.addEventListener("DOMContentLoaded", function () {
+                alert(33);
+            });
+        </script>
+    </head>
+    <body>
+        <button>点击</button>
+    </body>
+</html>

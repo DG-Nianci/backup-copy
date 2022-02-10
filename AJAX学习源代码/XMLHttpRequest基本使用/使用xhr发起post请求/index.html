@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <script>
+            window.addEventListener("load", function () {
+                //创建xhr对象
+                var xhr = new XMLHttpRequest();
+                //调用open()函数
+                xhr.open("POST", "http://www.liulongbin.top:3006/api/addbook");
+                //设置Content-Type属性(固定写法)
+                xhr.setRequestHeader(
+                    "Content-Type",
+                    "application/x-www-form-urlencoded"
+                );
+                //调用send()函数
+                xhr.send("bookname=水浒传&author=谷智鑫&publisher=北京出版社");
+                //监听onreadystatechange事件
+                xhr.onreadystatechange = function () {
+                    if ((xhr.readyState === 4, xhr.status === 200)) {
+                        console.log(xhr.responseText);
+                    }
+                };
+            });
+        </script>
+    </head>
+    <body></body>
+</html>

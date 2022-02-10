@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <script src="../../jQuery min.js"></script>
+        <title>Document</title>
+        <script>
+            $(function () {
+                //1、element.prop("属性名") 获取元素固有属性值
+                console.log($("p").prop("id", "one"));
+
+                //2、attr() 获取元素自定义属性
+                console.log($("p").attr("index", "1"));
+
+                //3、data() 数据缓存，这个里面的数据是存放在元素内存里面的，页面刷新就删除
+                $("span").data("aone", "hi");
+                console.log($("span").data("aone"));
+                //这个方法获取data-index  h5自定义属性  不用写data- 而且返回的是数字型
+                console.log($("p").data("index"));
+            });
+        </script>
+    </head>
+    <body>
+        <p id="p1" index="2" data-index="666">水水水水</p>
+        <span>山大王低价</span>
+    </body>
+</html>

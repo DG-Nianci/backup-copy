@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <script>
+            //利用字面量创建对象 {}
+            // var obj = {}; //创建了一个空的对象
+            //1、调用对象的属性 用 对象名.属性名     . 理解为的
+            //2、调用对象的属性2 用 对象名['属性名']
+            //3、调用对象的方法  对象名. 方法名（）
+            var obj = {
+                name: "张三",
+                age: "18",
+                sex: "男",
+                method: function () {
+                    alert("hi");
+                },
+            };
+
+            alert(obj.name);
+            alert(obj["sex"]);
+            obj.method();
+            //里面属性或者方法我们采取键值对的形式    键 属性名：值 属性值
+            //多个属性或方法中间用逗号隔开
+            //方法冒号后面跟的是匿名函数
+        </script>
+    </head>
+    <body></body>
+</html>

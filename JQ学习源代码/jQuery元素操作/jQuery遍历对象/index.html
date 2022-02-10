@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <script src="../../jQuery min.js"></script>
+        <title>Document</title>
+        <script>
+            $(function () {
+                //针对于同一类元素做不同操作，需要用到遍历元素（类似于for，但是比for强大）
+                //each(function(index,domEle){}) 遍历元素
+                //index:每个元素的索引号,可以自己指定索引号名称
+                //domEle:每个DOM元素对象，不是jQuery对象，要想使用jQuery对象就要把domEle转换为jQuery对象 $(domEle)
+                var arr = ["red", "green", "blue"];
+                var num = 0;
+                $("div").each(function (i, domEle) {
+                    console.log(i);
+                    console.log(domEle);
+                    $(domEle).css("color", arr[i]);
+                    num += parseFloat($(domEle).text());
+                });
+                console.log(num);
+
+                //$.each() 方法遍历，主要用于遍历数据，处理数据
+                $.each(arr, function (i, obj) {
+                    console.log(i);
+                    console.log(obj);
+                });
+            });
+        </script>
+    </head>
+    <body>
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+    </body>
+</html>

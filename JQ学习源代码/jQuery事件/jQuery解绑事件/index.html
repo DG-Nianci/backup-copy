@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <script src="../../jQuery min.js"></script>
+        <title>Document</title>
+        <style>
+            div {
+                width: 300px;
+                height: 300px;
+                background: red;
+            }
+        </style>
+        <script>
+            $(function () {
+                $("div").on({
+                    click: function () {
+                        console.log("点击");
+                    },
+                    mouseenter: function () {
+                        console.log("鼠标经过");
+                    },
+                });
+                $("ul").on("click", "li", function () {
+                    alert(11);
+                });
+
+                //off() 事件解绑
+                $("div").off(); //如果括号为空则解绑div身上的所有事件
+                $("div").off("click"); //解绑div身上点击事件
+                $("ul").off("click", "li"); //解绑事件委托
+
+                //one() 它只能触发一次
+                $("p").one("click", function () {
+                    alert(11);
+                });
+            });
+        </script>
+    </head>
+    <body>
+        <div></div>
+        <ul>
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+            <li>5</li>
+        </ul>
+        <p>shaihdaw</p>
+    </body>
+</html>

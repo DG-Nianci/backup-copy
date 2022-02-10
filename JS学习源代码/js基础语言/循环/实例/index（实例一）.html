@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <script>
+            //求1-100所有数的总和的平均值
+            var num1 = 0;
+            for (var i = 1; i <= 100; i++) {
+                num1 += i;
+            }
+            var average = num1 / 100;
+            alert(average);
+            //求1-100所有偶数的和
+            var num2 = 0;
+            for (var j = 1; j <= 100; j++) {
+                if (j % 2 == 0) {
+                    num2 += j;
+                }
+            }
+            alert(num2);
+            //求100以内所有7的倍数的总和
+            var num3 = 0;
+            for (var p = 1; p <= 100; p++) {
+                if (p % 7 == 0) {
+                    num3 += p;
+                }
+            }
+            alert(num3);
+        </script>
+    </head>
+    <body></body>
+</html>

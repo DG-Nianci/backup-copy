@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <script>
+            window.addEventListener("DOMContentLoaded", function () {
+                var btn = document.querySelector("button");
+                var timer = 10;
+                btn.addEventListener("click", function () {
+                    btn.disabled = true;
+                    time = setInterval(function () {
+                        if (timer == 0) {
+                            clearInterval(time);
+                            btn.disabled = false;
+                            btn.innerHTML = "发送";
+                            timer = 10; //新复原定义的时间
+                        } else {
+                            timer--;
+                            btn.innerHTML = "还有" + timer + "秒";
+                        }
+                    }, 1000);
+                });
+            });
+        </script>
+    </head>
+    <body>
+        手机号码: <input type="number" /> <button>发送</button>
+    </body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <div>123</div>
+        <ul>
+            <li>01</li>
+            <li>02</li>
+            <li>03</li>
+        </ul>
+        <script>
+            var odiv = document.querySelector("div");
+            odiv.addEventListener("click", function (e) {
+                //e.target 返回的是触发事件的对象（元素）
+                //this 返回的是绑定事件的对象（元素）
+                //currentTarget 和this非常相似
+                console.log(e.target);
+            });
+            var oul = document.querySelector("ul");
+            oul.addEventListener("click", function (e) {
+                console.log(this);
+                console.log(e.target);
+            });
+
+            // //解决兼容性问题;
+            // odiv.onclick = function (e) {
+            //     e = e || window.event;
+            //     var target = e.target || e.srcElement;
+            //     console.log(target);
+            // };
+        </script>
+    </body>
+</html>

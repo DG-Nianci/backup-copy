@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <script src="../../jQuery min.js"></script>
+        <title>Document</title>
+        <script>
+            $(function () {
+                //1、创建元素
+                //$("要添加的标签")
+                var li = $("<li>添加的li</li>");
+                //2、添加元素
+                //（1）内部添加 append() prepend()  是父子关系
+                $("ul").append(li); //内部添加，放到内容的最后面
+                $("ul").prepend(li); //内部添加，放到内容的最前面
+                //（2）外部添加 after() before()  是兄弟关系
+                var div = $("<div>后添加的div</div>");
+                $(".one").after(div); //外部部添加，放到内容的最后面
+                $(".one").before(div); //外部添加，放到内容的最前面
+                //删除元素 remove() empty() html('')
+                $("ul").remove(); //删除匹配元素（本身）
+                $("ul").empty(); //删除匹配的所有子元素
+                $("ul").html(""); //清空所有子节点
+            });
+        </script>
+    </head>
+    <body>
+        <ul>
+            <li>原来的li</li>
+        </ul>
+        <div class="one">原先的div</div>
+    </body>
+</html>

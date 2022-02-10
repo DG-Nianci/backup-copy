@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <script>
+            //1、 if的语法结构         if:如果
+            // if (条件表达式) {
+            //      执行语句1
+            // }
+
+            //1.2、执行思路   如果if里面的条件表达式结果为true则执行大括号里面的 执行语句
+            //                    如果if里面的条件表达式结果为false则不执行打括号里的代码，则执行if语句后面的代码
+
+            if (3 < 5) {
+                alert("false");
+            }
+
+            //2、if else语法结构        if:如果,else:否则
+            // if(条件表达式){
+            //          执行语句1
+            // }
+            // else{
+            //          执行语句2
+            // }
+
+            //2.2、执行思路    如果表达式及如果为真，那么执行语句1      否则，执行语句2
+
+            var num = prompt("请输入年龄");
+            if (num >= 18) {
+                alert("欢迎光临");
+            } else {
+                alert("未成年禁止入内");
+            }
+
+            //3、if else if 语句结构
+            // if(条件表达式1){
+            //          语句1
+            // } else if(条件表达式2){
+            //          语句2
+            // } else if(条件表达式3){
+            //          语句3
+            // } else if(条件表达式4){
+            //          语句4
+            // }else{
+            //          最后的语句
+            // }
+
+            //3.2、执行思路
+            //如果条件表达式1，满足就执行，语句1 。执行完毕后退出整个 if 分支语句
+            //如果条件表达式1，不满足，则判断条件表达式2是否满足，满足的话就执行 语句2  以此类推
+            //如果所有条件表达式都不满足，则执行 else 里面最后语句
+        </script>
+    </head>
+    <body></body>
+</html>

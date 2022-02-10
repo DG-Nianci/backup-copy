@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <script src="../../jQuery min.js"></script>
+        <title>Document</title>
+        <script>
+            $(function () {
+                //遍历内部DOM元素（伪数组的形式存储）的过程就叫做隐式迭代
+                $("div").css("background", "pink");
+
+                $("ul li").css("color", "red");
+            });
+        </script>
+    </head>
+    <body>
+        <div>惊喜不，意外不</div>
+        <div>惊喜不，意外不</div>
+        <div>惊喜不，意外不</div>
+        <div>惊喜不，意外不</div>
+        <ul>
+            <li>相同的操作</li>
+            <li>相同的操作</li>
+            <li>相同的操作</li>
+        </ul>
+    </body>
+</html>

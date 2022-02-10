@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <script src="../../jQuery min.js"></script>
+        <title>Document</title>
+        <script>
+            $(function () {
+                //ID选择器
+                $("#one");
+                console.log($("#one"));
+                //类名选择器
+                $(".nav");
+                console.log($(".nav"));
+                //标签选择器
+                $("p");
+                console.log($("p"));
+                //后代选择器
+                $("ul li");
+                console.log($("ul li"));
+            });
+        </script>
+    </head>
+    <body>
+        <div id="one">我是div</div>
+        <div class="nav">我是nav div</div>
+        <p>我是p</p>
+        <ol>
+            <li>我是ol 的</li>
+            <li>我是ol 的</li>
+            <li>我是ol 的</li>
+            <li>我是ol 的</li>
+        </ol>
+        <ul>
+            <li>我是ul 的</li>
+            <li>我是ul 的</li>
+            <li>我是ul 的</li>
+            <li>我是ul 的</li>
+        </ul>
+    </body>
+</html>

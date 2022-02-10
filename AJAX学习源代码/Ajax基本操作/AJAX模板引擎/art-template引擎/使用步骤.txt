@@ -1,0 +1,6 @@
+art-template使用步骤：
+    1、导入art-template
+    2、定义数据
+    3、定义模板
+    4、调用template
+    5、渲染HTML结构

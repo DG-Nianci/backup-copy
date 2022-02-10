@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <style>
+            div {
+                width: 100px;
+                height: 100px;
+                background: red;
+                border: 1px solid black;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="d1"></div>
+        <div class="d2"></div>
+        <script>
+            var odiv = document.querySelector(".d1");
+            odiv.onclick = function () {
+                alert("yes");
+                //传统方式删除
+                odiv.onclick = null;
+            };
+            var div = document.querySelector(".d2");
+            div.addEventListener("click", fn);
+            function fn() {
+                alert("hello");
+                div.removeEventListener("click", fn);
+            }
+        </script>
+    </body>
+</html>

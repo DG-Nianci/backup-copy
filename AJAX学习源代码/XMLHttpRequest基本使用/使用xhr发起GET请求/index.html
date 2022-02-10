@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <script>
+            window.addEventListener("load", function () {
+                //创建xhr对象
+                var xhr = new XMLHttpRequest();
+                //调用open(指定请求方式，URL地址)函数
+                xhr.open(
+                    "GET",
+                    "http://www.liulongbin.top:3006/api/getbooks?id=1" //id=1 查询的参数
+                );
+                //调用send()函数
+                xhr.send();
+                //监听onreadystatechange事件
+                xhr.onreadystatechange = function () {
+                    //监听xhr对象的请求状态readyState:与服务器响应状态status
+                    if (xhr.readyState === 4 && xhr.status === 200) {
+                        //具体操作
+                        console.log(xhr.responseText);
+                    }
+                };
+
+                //编码函数 encodeURI
+                var coding = encodeURI("周裕鑫");
+                console.log(coding);
+                //解码函数 decodeURI
+                var decoding = decodeURI("%E5%91%A8%E8%A3%95%E9%91%AB");
+                console.log(decoding);
+            });
+        </script>
+    </head>
+    <body></body>
+</html>

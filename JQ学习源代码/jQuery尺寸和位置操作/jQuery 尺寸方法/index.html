@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <script src="../../jQuery min.js"></script>
+        <title>Document</title>
+        <style>
+            div {
+                width: 300px;
+                height: 300px;
+                background-color: red;
+                margin: 20px;
+                padding: 20px;
+                border: 5px solid black;
+            }
+        </style>
+        <script>
+            $(function () {
+                //1.width()/height() 获取设置元素 width和height大小
+                console.log($("div").width());
+                // $("div").width(400); //不需要引号和单位
+                //2.innerWidth()/innerHeight() 获取设置元素 width和height+padding 大小
+                console.log($("div").innerWidth());
+                //3.outerWidth()outerHeight() 获取设置元素 width和height+padding+border 大小
+                console.log($("div").outerWidth());
+                //4.outerWidth(true)/outerHeight(true) 获取设置 width和height+padding+border+margin
+                console.log($("div").outerWidth(true));
+                //如果参数值为空，则获取相应数值，返回的是数字型
+                //如果参数为数字，则修改相应的值
+            });
+        </script>
+    </head>
+    <body>
+        <div></div>
+    </body>
+</html>

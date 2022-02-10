@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <style>
+            div {
+                width: 400px;
+                height: 200px;
+                line-height: 200px;
+                color: black;
+                text-align: center;
+                background: darkgray;
+            }
+        </style>
+    </head>
+    <body>
+        <button id="btn">显示当前时间</button>
+        <div id="one">时间</div>
+        <p>
+            文字
+            <span>15135153</span>
+        </p>
+        <script>
+            var odiv = document.getElementById("one");
+            var oBtn = document.getElementById("btn");
+            var p = document.querySelector("p");
+
+            console.log(p.innerHTML);
+            console.log(p.innerText);
+            //innerText和innerHtML的区别
+            //这两个属性是可读写的，可以获取
+            //innerText不识别html标签（非标准） 去除空格和换行
+            //innerHTML识别html标签（wc3推荐） 保留空格和换行
+
+            oBtn.onclick = function () {
+                odiv.innerText = getTime();
+                odiv.innerHTML = getTime();
+            };
+
+            function getTime() {
+                var time = new Date();
+                var year = time.getFullYear();
+                var month = time.getMonth() + 1;
+                var date = time.getDate();
+                var arr = [
+                    "星期日",
+                    "星期一",
+                    "星期二",
+                    "星期三",
+                    "星期四",
+                    "星期五",
+                    "星期六",
+                ];
+                var day = time.getDay();
+
+                return year + "年" + month + "月" + date + "日" + arr[day];
+            }
+        </script>
+    </body>
+</html>

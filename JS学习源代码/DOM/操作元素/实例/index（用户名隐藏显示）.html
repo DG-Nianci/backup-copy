@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <style>
+            .text {
+                border: 1px solid black;
+                color: #999;
+                outline: none;
+            }
+        </style>
+    </head>
+    <body>
+        <input class="text" type="text" value="用户名/账号" />
+        <script>
+            var text = document.querySelector("input");
+
+            text.onfocus = function () {
+                this.style.border = "2px solid pink";
+                if (this.value == "用户名/账号") {
+                    this.value = "";
+                }
+                this.style.color = "black";
+            };
+            text.onblur = function () {
+                if (this.value == "") {
+                    this.value = "用户名/账号";
+                    this.style.color = "#999";
+                }
+            };
+        </script>
+    </body>
+</html>

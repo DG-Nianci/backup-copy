@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <style>
+            * {
+                margin: 0px;
+                padding: 0px;
+            }
+            div {
+                width: 300px;
+                height: 300px;
+                background-color: royalblue;
+                overflow: auto;
+            }
+        </style>
+        <script>
+            window.addEventListener("DOMContentLoaded", function () {
+                var odiv = document.querySelector("div");
+                console.log(odiv.scrollHeight);
+
+                //scroll 滚动事件，当我们滚动条发生变化时会触发事件
+                odiv.addEventListener("scroll", function () {
+                    console.log(odiv.scrollTop);
+                });
+            });
+        </script>
+    </head>
+    <body>
+        <div>
+            啊啦啦啦啊啦啦啦啊啦啦啦啊啦啦啦啊啦啦啦啊啦啦啦啊啦啦啦啊啦啦啦啊啦啦啦啊啦啦啦啊啦啦啦啊啦啦啦啊啦啦啦啊啦啦啦啊啦啦啦啊啦啦啦啊啦啦啦啊啦啦啦啊啦啦啦啊啦啦啦啊啦啦啦啊啦啦啦啊啦啦啦啊啦啦啦啊啦啦啦啊啦啦啦啊啦啦啦啊啦啦啦啊啦啦啦啊啦啦啦啊啦啦啦啊啦啦啦啊啦啦啦啊啦啦啦啊啦啦啦啊啦啦啦啊啦啦啦啊啦啦啦啊啦啦啦啊啦啦啦啊啦啦啦啊啦啦啦啊啦啦啦啊啦啦啦啊啦啦啦啊啦啦啦啊啦啦啦啊啦啦啦啊啦啦啦啊啦啦啦啊啦啦啦啊啦啦啦啊啦啦啦啊啦啦啦啊啦啦啦啊啦啦啦啊啦啦啦啊啦啦啦啊啦啦啦啊啦啦啦啊啦啦啦啊啦啦啦啊啦啦啦啊啦啦啦啊啦啦啦啊啦啦啦啊啦啦啦啊啦啦啦啊啦啦啦啊啦啦啦啊啦啦啦啊啦啦啦啊啦啦啦啊啦啦啦啊啦啦啦啊啦啦啦啊啦啦啦啊啦啦啦啊啦啦啦啊啦啦啦啊啦啦啦啊啦啦啦啊啦啦啦啊啦啦啦啊啦啦啦啊啦啦啦啊啦啦啦啊啦啦啦啊啦啦啦啊啦啦啦啊啦啦啦啊啦啦啦啊啦啦啦啊啦啦啦啊啦啦啦啊啦啦啦啊啦啦啦啊啦啦啦啊啦啦啦啊啦啦啦啊啦啦啦啊啦啦啦啊啦啦啦啊啦啦啦啊啦啦啦啊啦啦啦啊啦啦啦啊啦啦啦啊啦啦啦啊啦啦啦啊啦啦啦啊啦啦啦啊啦啦啦啊啦啦啦啊啦啦啦啊啦啦啦啊啦啦啦啊啦啦啦啊啦啦啦啊啦啦啦
+        </div>
+    </body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <script>
+            window.addEventListener("DOMContentLoaded", function () {
+                var odiv = document.querySelector("div");
+                parameter(odiv, 5);
+
+                function parameter(div, e) {
+                    var meter = location.search.substr(1);
+                    div.innerHTML = meter.substr(e) + "欢迎您";
+                }
+            });
+        </script>
+    </head>
+    <body>
+        <div></div>
+    </body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <!-- <script src="../../插件/jQuery min.js"></script> -->
+        <!-- <script src="../../插件/art.js"></script> -->
+        <title>Document</title>
+        <script>
+            window.addEventListener("load", function () {
+                var data = {
+                    name: "DG",
+                    age: "20",
+                    gender: "男",
+                    address: "东北",
+                };
+                var addHtml = regular("one", data);
+                document.getElementById("two").innerHTML = addHtml;
+
+                function regular(id, data) {
+                    var str = document.getElementById(id).innerHTML;
+                    var pattern = /{{\s*([a-zA-Z]+)\s*}}/;
+                    var Ret = null;
+                    while ((Ret = pattern.exec(str))) {
+                        str = str.replace(Ret[0], data[Ret[1]]);
+                    }
+                    return str;
+                }
+            });
+        </script>
+    </head>
+    <body>
+        <div id="two"></div>
+        <script type="text/html" id="one">
+            <ul>
+                <li>姓名:{{name}}</li>
+                <li>年龄:{{ age }}</li>
+                <li>性别:{{ gender}}</li>
+                <li>住址:{{address }}</li>
+            </ul>
+        </script>
+    </body>
+</html>

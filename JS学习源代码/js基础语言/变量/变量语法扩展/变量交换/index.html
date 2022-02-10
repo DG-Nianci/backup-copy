@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>变量交换</title>
+    <script>
+      //变量交换，需要一个临时变量，然后吧第一个变量放到临时变量里面，在把第二个变量放到第一个变量里面，最后再把临时变量里面的第一个变量放到第二个变量里面
+
+      //定义变量
+      var temp;
+      var a1 = 10;
+      var a2 = 11;
+
+      //变量交换
+      temp = a1;
+      a1 = a2;
+      a2 = temp;
+
+      //输出变量
+      alert(a1);
+      alert(a2);
+    </script>
+  </head>
+  <body></body>
+</html>

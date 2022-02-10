@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <script>
+            //用构造函数创建对象
+            // function 构造函数名() {
+            //     this.属性 = 值;
+            //     this.方法 = function () {};
+            // }
+            // new 构造函数名();
+            //1、构造函数首字母大写
+            //2、构造函数不需要 return
+            //3、使用构造函数必须私用 new
+            //4、只要调用 new 狗在函数名();,就相当于创建了一个对象
+            //5、在构造函数中属性和方法前面必须添加 this
+
+            //new关键字执行过程：
+            //1、new 构造函数可以在内存中创建一个空的对象
+            //2、this 就会指向刚才创建的空对象
+            //3、执行构造函数里面的代码 给这个空对象添加属性和方法
+            //4、返回这个对象
+            function Fun(name, type, blood) {
+                this.name = name;
+                this.type = type;
+                this.blood = blood;
+                this.modo = function (attack) {
+                    alert(attack);
+                };
+            }
+            var hy = new Fun("后裔", "射手型", "100血量");
+            var lp = new Fun("廉颇", "力量型", "500血量");
+            alert(hy.name);
+            alert(hy.type);
+            alert(hy.blood);
+            hy.modo("远程");
+            console.log(lp.name);
+            console.log(lp.type);
+            console.log(lp.blood);
+            lp.modo("近战");
+        </script>
+    </head>
+    <body></body>
+</html>

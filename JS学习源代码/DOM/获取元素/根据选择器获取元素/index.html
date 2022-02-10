@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <div id="header">shdiawj</div>
+        <ul>
+            <li class="one">啦拉拉</li>
+            <li class="one">啦拉拉</li>
+        </ul>
+        <script>
+            //新增获取方式（有兼容性问题）
+            //querySelector()
+            //选取class 前面要加.   选取id前面要加#
+            //返回指定选择器的第一个元素对象
+            var oHeader = document.querySelector("#header");
+            console.log(oHeader);
+            var one = document.querySelector(".one");
+            console.log(one);
+
+            //querySelectorAll()
+            //返回指定选择器的所有元素对象
+            var oLi = document.querySelectorAll(".one");
+            console.log(oLi);
+        </script>
+    </body>
+</html>

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="css/search.css" />
+        <script src="../../../插件/jQuery min.js"></script>
+        <script src="../../../插件/art.js"></script>
+        <title>Document</title>
+        <script>
+            $(function () {
+                //定义全局缓存
+                var obj = {};
+                //输入框防抖
+                var time = null;
+                function timer(kw) {
+                    time = setTimeout(function () {
+                        getJSONP(kw);
+                    }, 1000);
+                }
+                $(".ipt").on("keyup", function () {
+                    clearTimeout(time);
+
+                    var text = $(this).val().trim();
+                    if (text <= 0) {
+                        return $("#suggest-list").empty().hide();
+                    }
+
+                    if (obj[text]) {
+                        return getArt(obj[text]);
+                    }
+
+                    timer(text);
+                });
+                //封装jsonp函数
+                function getJSONP(kw) {
+                    $.ajax({
+                        url: "https://suggest.taobao.com/sug?q=" + kw,
+                        dataType: "jsonp",
+                        success: function (res) {
+                            // console.log(res);
+                            getArt(res);
+                        },
+                    });
+                }
+                //调用art
+                function getArt(res) {
+                    if (res.result.length <= 0) {
+                        return $("#suggest-list").empty().hide();
+                    }
+                    var addHTML = template("one", res);
+                    $("#suggest-list").html(addHTML).show();
+
+                    var k = $(".ipt").val().trim();
+                    obj[k] = res;
+                }
+            });
+        </script>
+    </head>
+    <body>
+        <div class="container">
+            <!-- Logo -->
+            <img src="./images/taobao_logo.png" alt="" class="logo" />
+
+            <div class="box">
+                <!-- tab 栏 -->
+                <div class="tabs">
+                    <div class="tab-active">宝贝</div>
+                    <div>店铺</div>
+                </div>
+                <!-- 搜索区域（搜索框和搜索按钮） -->
+                <div class="search-box">
+                    <input
+                        id="ipt"
+                        type="text"
+                        class="ipt"
+                        placeholder="请输入要搜索的内容"
+                    /><button class="btnSearch">搜索</button>
+                </div>
+                <!-- 搜索建议列表 -->
+                <div id="suggest-list"></div>
+                <script type="text/html" id="one">
+                    {{each result}}
+                    <div class="advice">{{$value[0]}}</div>
+                    {{/each}}
+                </script>
+            </div>
+        </div>
+    </body>
+</html>

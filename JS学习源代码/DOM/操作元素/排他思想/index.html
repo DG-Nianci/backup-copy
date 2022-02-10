@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <button>1</button>
+        <button>2</button>
+        <button>3</button>
+        <button>4</button>
+        <button>5</button>
+        <script>
+            //排他思想
+            //先所有元素全部清除样式
+            //然后在设置样式
+            var btn = document.getElementsByTagName("button");
+            for (var i = 0; i < btn.length; i++) {
+                btn[i].onclick = function () {
+                    for (var i = 0; i < btn.length; i++) {
+                        btn[i].style.backgroundColor = "";
+                    }
+                    this.style.backgroundColor = "red";
+                };
+            }
+        </script>
+    </body>
+</html>

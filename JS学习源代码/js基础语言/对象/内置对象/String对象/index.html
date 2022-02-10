@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <script>
+            //基本包装类型
+            //把简单数据类型包装成为复杂数据类型，这样简单数据类型就有了属性和方法
+            var str = new String("sddasdj");
+            console.log(str.length);
+
+            //字符串方法（所有方法都不会修改字符串本身）操作完乘成都会产生一个新的字符串
+            //根据字符返回位置
+            var str = "改革春风吹满地，中国人民真争气，地";
+            console.log(str.indexOf("春"));
+            console.log(str.indexOf("地", 6)); //从索引号6开始往后查找
+
+            //根据位置返回字符
+            //1、charAt(index)根据位置返回字符
+            var text = "asdawd";
+            console.log(text.charAt(4));
+            //遍历所有字符
+            for (var i = 0; i < text.length; i++) {
+                console.log(text.charAt(i));
+            }
+            //2、charCodeAt(index) 返回相应索引号的字符ASCII值  用法：判断用户按下了哪个键
+            console.log(text.charCodeAt(3));
+            //3、h5新增的 变量名[index] （有兼容性问题）
+            console.log(text[0]);
+
+            //字符串操作方法
+            //1、concat("字符串1"，”字符串2“......)
+            var tex = "andy";
+            console.log(tex.concat("red"));
+            //2、substr("截取起始位置"，”截取几个字符“)
+            console.log(tex.substr(1, 2));
+
+            //替换字符 replace(‘被替换字符’，'替换为的字符'') 只会替换第一个满足条件的字符
+            var t = "andyandy";
+            console.log(t.replace("a", "z"));
+
+            //把字符串里面的o替换成*
+            var t1 = "oabcoefoxyozzopp";
+            while (t1.indexOf("o") !== -1) {
+                t1 = t1.replace("o", "*");
+            }
+            console.log(t1);
+
+            //字符串转换为数组 split("分隔符")
+            var wz = "red,pink,blue";
+            console.log(wz.split(",")); //字符串用什么分割转换后也用什么分割
+        </script>
+    </head>
+    <body></body>
+</html>

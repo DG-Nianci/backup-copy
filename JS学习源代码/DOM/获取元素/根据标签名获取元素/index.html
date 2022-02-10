@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <ul>
+            <li>啦拉拉，德玛西亚</li>
+            <li>啦拉拉，德玛西亚</li>
+            <li>啦拉拉，德玛西亚</li>
+            <li>啦拉拉，德玛西亚</li>
+            <li>啦拉拉，德玛西亚</li>
+        </ul>
+        <ol id="o1">
+            <li>周裕鑫</li>
+            <li>周裕鑫</li>
+            <li>周裕鑫</li>
+            <li>周裕鑫</li>
+        </ol>
+        <script>
+            //根据标签名获取
+            //用getElementsByTagName()
+            //返回的是，获取过来的元素对象的集合，以伪数组的形式存储的（不管有几个）
+            //得到的元素对象是动态的
+            //如果页面中没有这个元素，它返回的是一个空的伪数组
+            var oLi = document.getElementsByTagName("li");
+            console.log(oLi);
+            //遍历li
+            for (var i = 0; i < oLi.length; i++) {
+                console.log(oLi[i]);
+            }
+
+            //element（父元素）.getElementsTagName()
+            //父元素必须是单个对象，获取时不包括父元素自己
+            var ool = document.getElementById("o1");
+            var aLi = ool.getElementsByTagName("li");
+            console.log(aLi);
+        </script>
+    </body>
+</html>

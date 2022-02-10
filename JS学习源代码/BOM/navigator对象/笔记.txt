@@ -1,0 +1,3 @@
+navigator对象：
+    navigator对象包含有关浏览器的信息，他有很多属性，我们最常用的是userAgent，
+    userAgent属性可以返沪由客户机发送服务器的user-agent头部的值

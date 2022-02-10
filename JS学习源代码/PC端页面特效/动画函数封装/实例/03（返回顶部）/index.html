@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <style>
+            * {
+                margin: 0px;
+                padding: 0px;
+            }
+            .a1 {
+                width: 50px;
+                height: 200px;
+                background: pink;
+                position: absolute;
+                right: 0px;
+                top: 300px;
+                font-size: 12px;
+                text-align: center;
+            }
+            .one {
+                width: 50px;
+                height: 50px;
+                line-height: 50px;
+                background: purple;
+            }
+            .two {
+                display: none;
+                width: 50px;
+                height: 50px;
+                line-height: 50px;
+                background: royalblue;
+            }
+
+            .a2 {
+                width: 1000px;
+                height: 300px;
+                background: coral;
+                float: left;
+            }
+            .a3 {
+                width: 1000px;
+                height: 300px;
+                background: lightblue;
+                float: left;
+            }
+            .a4 {
+                width: 1000px;
+                height: 800px;
+                background: lightyellow;
+                float: left;
+            }
+        </style>
+        <script>
+            window.addEventListener("DOMContentLoaded", function () {
+                var odiv = document.querySelector(".a1");
+                var div = document.querySelector(".two");
+                var nav = document.querySelector(".a3");
+                var content = document.querySelector(".a4");
+
+                var top = nav.offsetTop;
+                var odivTop = odiv.offsetTop - top;
+                var contentTop = content.offsetTop;
+
+                document.addEventListener("scroll", function () {
+                    var num = window.pageYOffset;
+                    if (num >= top) {
+                        odiv.style.position = "fixed";
+                        odiv.style.top = odivTop + "px";
+                    } else {
+                        odiv.style.position = "absolute";
+                        odiv.style.top = "300px";
+                    }
+                    if (num >= contentTop) {
+                        div.style.display = "block";
+                    } else {
+                        div.style.display = "none";
+                    }
+                });
+                div.addEventListener("click", function () {
+                    simple(window, 0);
+                });
+                //动画函数
+                function simple(obj, target, callback) {
+                    clearInterval(obj.time);
+                    obj.time = setInterval(function () {
+                        var speed = (target - window.pageYOffset) / 10;
+                        speed =
+                            speed > 0 ? Math.ceil(speed) : Math.floor(speed);
+                        if (window.pageYOffset == target) {
+                            clearInterval(obj.time);
+                            if (callback) {
+                                callback();
+                            }
+                        }
+                        // obj.style.left = window.pageYOffset + speed + "px";
+                        window.scroll(0, window.pageYOffset + speed);
+                    }, 15);
+                }
+            });
+        </script>
+    </head>
+    <body>
+        <div class="a1">
+            <div class="one">halle</div>
+            <div class="two">返回顶部</div>
+        </div>
+        <div class="a2">herder</div>
+        <div class="a3">nav</div>
+        <div class="a4">content</div>
+    </body>
+</html>

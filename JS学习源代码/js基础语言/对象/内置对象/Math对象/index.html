@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <script>
+            //Math对象
+
+            //Math.random 随机数方法
+            function getRandom(min, max) {
+                return Math.floor(Math.random() * (max - min + 1)) + min;
+            }
+            alert(getRandom(1, 100));
+            //随机点名
+            var arr = ["张三", "李四", "王五", "刘六", "孙七", "猪头"];
+            alert(arr[getRandom(0, arr.length - 1)]);
+            //自己写一个Math对象
+            var myMath = {
+                IP: 3.1415926,
+                Max: function () {
+                    var max = arguments[0];
+                    for (var i = 1; i < arguments.length; i++) {
+                        if (max < arguments[i]) {
+                            max = arguments[i];
+                        }
+                        return max;
+                    }
+                },
+                Min: function () {
+                    var min = arguments[0];
+                    for (var i = 1; i < arguments.length; i++) {
+                        if (min > arguments[i]) {
+                            min = arguments[i];
+                        }
+                        return min;
+                    }
+                },
+            };
+            console.log(myMath.IP);
+            console.log(myMath.Max(1, 10, 5));
+            console.log(myMath.Min(5, 66, 44));
+
+            //绝对值方法
+            alert(Math.abs(-1));
+            alert(Math.abs("-1")); //隐式转换，把字符串转换为数字
+
+            //三个取整方法
+            //1、Math.floor()向下取整
+            console.log(Math.floor(1.9));
+            //2、math.ceil()向上取整
+            console.log(Math.ceil(1.1));
+            //3、Math.round() 四舍五入  .5往上取
+            console.log(Math.round(1.5));
+        </script>
+    </head>
+    <body></body>
+</html>

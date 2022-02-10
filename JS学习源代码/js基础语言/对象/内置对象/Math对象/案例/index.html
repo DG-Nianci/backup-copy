@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>猜数字</title>
+        <script>
+            function getRandom(min, max) {
+                return Math.floor(Math.random() * (max - min + 1)) + min;
+            }
+            var sj = getRandom(0, 10);
+            console.log(sj);
+            alert("你只有五次机会");
+            // while (true) {
+            //     var sr = prompt("请输入一个数");
+            //     if (sr < sj) {
+            //         alert("数字小了，继续猜");
+            //     } else if (sr > sj) {
+            //         alert("数字大了，继续猜");
+            //     } else {
+            //         alert("猜对咯");
+            //         break;
+            //     }
+            // }
+
+            for (var i = 1; i <= 5; i++) {
+                if (i <= 4) {
+                    alert("这是你的第" + [i] + "次机会");
+                } else {
+                    alert("最后一次机会");
+                }
+                var sr = prompt("请输入一个数");
+                if (sr < sj) {
+                    alert("数字小了，继续猜");
+                } else if (sr > sj) {
+                    alert("数字大了，继续猜");
+                } else {
+                    alert("猜对咯");
+                }
+            }
+        </script>
+    </head>
+    <body></body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <script>
+            var num = 100;
+            do {
+                var str = prompt(
+                    "请输入您要的操作" +
+                        "\n" +
+                        "1.存钱" +
+                        "\n" +
+                        "2.取钱" +
+                        "\n" +
+                        "3.查询余额" +
+                        "\n" +
+                        "4.退出"
+                );
+                if (str == 1) {
+                    var i = prompt("请输入要存多少钱");
+                    num += Number(i);
+                    alert("您的余额为：" + num);
+                    break;
+                }
+                if (str == 2) {
+                    var j = prompt("请输入要取多少钱");
+                    num -= Number(j);
+                    alert("您的余额为：" + num);
+                    break;
+                }
+                if (str == 3) {
+                    alert("您的余额为：" + num);
+                    break;
+                }
+            } while (str != 4);
+        </script>
+    </head>
+    <body></body>
+</html>

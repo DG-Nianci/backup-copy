@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <script>
+            window.addEventListener("load", function () {
+                var text = document.querySelector("input");
+                var set = document.querySelector(".set");
+                var get = document.querySelector(".get");
+                var remove = document.querySelector(".remove");
+                var del = document.querySelector(".del");
+
+                set.addEventListener("click", function () {
+                    //存储数据
+                    var values = text.value;
+                    sessionStorage.setItem("one", values);
+                });
+                get.addEventListener("click", function () {
+                    //获取存入的数据
+                    console.log(sessionStorage.getItem("one"));
+                });
+                remove.addEventListener("click", function () {
+                    //移除数据
+                    sessionStorage.removeItem("one");
+                });
+                del.addEventListener("click", function () {
+                    //清除所有数据
+                    sessionStorage.clear();
+                });
+            });
+        </script>
+    </head>
+    <body>
+        <input type="text" />
+        <button class="set">存储数据</button>
+        <button class="get">获取数据</button>
+        <button class="remove">删除数据</button>
+        <button class="del">清空所有数据</button>
+    </body>
+</html>

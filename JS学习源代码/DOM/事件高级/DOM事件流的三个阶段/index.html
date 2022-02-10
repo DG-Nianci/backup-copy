@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <div class="one">
+            <div class="two">hi</div>
+        </div>
+        <script>
+            //事件捕捉阶段
+            //document -> html -> body -> one -> two
+            // var odiv = document.querySelector(".two");
+            // odiv.addEventListener(
+            //     "click",
+            //     function () {
+            //         alert("two");
+            //     },
+            //     true
+            // );
+            // var adiv = document.querySelector(".one");
+            // adiv.addEventListener(
+            //     "click",
+            //     function () {
+            //         alert("one");
+            //     },
+            //     true
+            // );
+
+            //事件冒泡阶段
+            //two -> one -> body -> html-> document
+            var odiv = document.querySelector(".two");
+            odiv.addEventListener(
+                "click",
+                function () {
+                    alert("two");
+                },
+                false
+            );
+            var adiv = document.querySelector(".one");
+            adiv.addEventListener(
+                "click",
+                function () {
+                    alert("one");
+                },
+                false
+            );
+        </script>
+    </body>
+</html>

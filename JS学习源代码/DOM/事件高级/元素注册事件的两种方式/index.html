@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <button class="b1">传统注册事件</button>
+        <button class="b2">方法监听事件</button>
+        <button class="b3">封装函数</button>
+        <script>
+            //传统方式注册事件
+            var btn1 = document.querySelector(".b1");
+            btn1.onclick = function () {
+                alert("hi");
+            };
+
+            //eventTarget.addEventListener(type,listener,useCapture)（IE9之前不支持）
+            //是指将指定监听器注册到eventTarget（目标对象）上，当该对象触发指定的事件式，就会执行事件处理函数
+            //type：事件类型，事件类型不带on
+            //listener：事件处理函数，事件发生时会调用监听函数
+            //useCapture：可选参数，是一个布尔值，默认为false
+            var btn2 = document.querySelector(".b2");
+            btn2.addEventListener("click", function () {
+                alert("halle");
+            });
+            //最好别用匿名函数，括号里直接写函数名就可以不用在后面加上括号
+            btn2.addEventListener("click", fn);
+            function fn() {
+                alert("yes");
+            }
+
+            //eventTarget.attachEvent(eventNameWithOn,callback)（IE9以前可以使用）
+            //是将指定的监听器注册到eventTarget（目标对象）上，该当对象触发指定的事件时，指定的回调函数就会被执行
+            //eventNameWithOn：事件类型字符串，要写on
+            //callback：事件处理函数，当目标触发事件时回调函数被调用
+        </script>
+    </body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>练习题</title>
+        <script>
+            //打印一个人的一生 1-100
+            var year = 1;
+            while (year <= 100) {
+                console.log("今年" + year + "岁");
+                year++;
+            }
+            //计算1-100之间所有整数的和
+            var num = 1;
+            var str = 0;
+            while (num <= 100) {
+                str += num;
+                num++;
+            }
+            console.log(str);
+            //弹出一个提示框询问你爱我吗，如果输入我爱你就结束，否则一直循环
+            var i = prompt("你爱我吗");
+            while (i !== "我爱你") {
+                var i = prompt("你爱我吗");
+            }
+        </script>
+    </head>
+    <body></body>
+</html>

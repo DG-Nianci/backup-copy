@@ -1,0 +1,10 @@
+$.ajax()函数：
+    相比于$.get() $.post() 函数，jQuery中提供的$.ajax()函数，是一个功能比较综合的函数，它允许我们对Ajax请求进行更详细的配置
+
+$.ajax()语法
+    $.ajax({
+        type:''                                         请求方式
+        url:''                                          请求的URL地址
+        data:()                                         这次请求要携带的数据
+        success:function(res){}                         请求成功后的回调函数
+    })

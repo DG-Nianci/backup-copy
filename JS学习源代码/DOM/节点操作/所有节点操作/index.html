@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <div class="one">
+            <span class="two"></span>
+        </div>
+        <ul class="u1">
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+        </ul>
+        <ol class="o1">
+            <li>01</li>
+            <li>02</li>
+            <li>03</li>
+            <li>04</li>
+        </ol>
+        <ul class="u2">
+            <li>01</li>
+        </ul>
+
+        <button>删除</button>
+        <ul class="u3">
+            <li>001</li>
+            <li>002</li>
+            <li>003</li>
+        </ul>
+        <ul class="u4">
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+        </ul>
+        <script>
+            //父节点 parentNode
+            //得到的是离元素最近的父节点，没有父节点返回null
+            var span = document.querySelector(".two");
+            span.parentNode;
+
+            //子节点 childNodes 所有子节点 包含 元素节点 文本节点 等等
+            var oul = document.querySelector(".u1");
+            var oli = oul.childNodes;
+            console.log(oli);
+            //子元素节点 children(常用)，只读一个属性，返回所有子节点
+            var lis = oul.children;
+            console.log(lis);
+
+            //获取子节点第一个或者最后一个
+            var ol = document.querySelector(".o1");
+            // firstChild 获取第一个子节点（不管是文本节点还是元素节点）
+            var ali = ol.firstChild;
+            console.log(ali);
+            //lastChild 获取最后一个子节点（不管是文本节点还是元素节点）
+            var bli = ol.lastChild;
+            console.log(bli);
+
+            //获取第一个子元素节点和最后一个子元素节点（兼容问题(IE9以上支持)）
+            console.log(ol.firstElementChild); //获取第一个子元素节点
+            console.log(ol.lastElementChild); //获取最后一个子元素节点
+            //解决方法
+            //获取第一个元素节点的方法
+            // var 变量名 = 父级元素.children[第一个元素节点的索引号];
+
+            //获取最后一个元素节点的办法
+            // var 变量名 = 父级元素.children[父级元素.children.length - 1];
+            console.log(ol.children[0]);
+            console.log(ol.children[ol.children.length - 1]);
+
+            //兄弟节点
+            //包括元素节点、文本节点
+            // nextSibling 获取下一个兄弟节点，找不到返回null
+            var odiv = document.querySelector(".one");
+            console.log(odiv.nextSibling);
+            // previousSibling 获取上一个兄弟节点，找不到返回null
+            console.log(odiv.previousSibling);
+
+            //只获取元素节点(IE9以上支持)
+            //netElementSibling 获取下一个兄弟元素节点，找不到返回null
+            console.log(odiv.nextElementSibling);
+            //previousElementsSibling 获取下一个兄弟元素节点，找不到返回null
+            console.log(odiv.previousElementSibling);
+
+            //创建元素节点，添加节点
+            //document.createElement()，方法创建是由 tayName 指定的HTML元素
+            //因为这些元素原先不存在是根据我们的需求动态生成的，所以我们也称为 动态创建元素节点
+            //node.appendChild(child)方法是将一个节点添加到指定的父节点的子节点末尾，类似于css里面的after伪元素
+            //node.insertBefore(child，指定元素)方法是将一个节点添加到父节点的指定子节点前面，类似于css里面的before伪元素
+            //node 是父级  child  是子级
+            var aul = document.querySelector(".u2");
+            var cli = document.createElement("li");
+            aul.appendChild(cli);
+            var lil = document.createElement("li");
+            aul.insertBefore(lil, aul.children[0]);
+
+            //删除节点
+            //node.removeChild(child) 方法从DOM中删除一个子节点，返回删除的节点
+            aul.removeChild(aul.children[0]);
+            var btn = document.querySelector("button");
+            var bul = document.querySelector(".u3");
+            btn.onclick = function () {
+                if (bul.children.length == 0) {
+                    this.disabled = true;
+                } else {
+                    bul.removeChild(bul.children[0]);
+                }
+            };
+
+            //复制节点
+            //node.cloneNode() 方法返回调用该方法的节点的一个副本，也称为克隆节点
+            //如果括号内参数为空或者false，则是浅拷贝，只复制节点本身，不复制里面的子节点
+            //如果括号内为true，则视为深拷贝，复制里面全部内容
+            var cul = document.querySelector(".u4");
+            var li = cul.children[0].cloneNode(true);
+            cul.appendChild(li);
+            cul.insertBefore(li, cul.children[0]);
+        </script>
+    </body>
+</html>

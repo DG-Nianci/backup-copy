@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="../../插件/bootstrap.min.css" />
+        <script src="../../插件/jQuery min.js"></script>
+        <title>Document</title>
+        <script>
+            window.addEventListener("load", function () {
+                var btn = document.querySelector(".btn");
+                btn.addEventListener("click", function () {
+                    var files = document.querySelector(".file1").files;
+                    if (files.length <= 0) {
+                        return alert("请选择要上传的文件");
+                    }
+                    var fd = new FormData();
+                    fd.append("avatar", files[0]);
+
+                    var xhr = new XMLHttpRequest();
+
+                    //监听文件上传进度
+                    xhr.upload.onprogress = function (e) {
+                        if (e.lengthComputable) {
+                            var often = Math.ceil((e.loaded / e.total) * 100);
+                            $(".bar")
+                                .attr("style", "width:" + often + "%")
+                                .html(often + "%");
+                        }
+                    };
+                    xhr.upload.onload = function () {
+                        $(".bar")
+                            .removeClass()
+                            .addClass("progress-bar progress-bar-success");
+                    };
+
+                    xhr.open(
+                        "POST",
+                        "http://www.liulongbin.top:3006/api/upload/avatar"
+                    );
+                    xhr.send(fd);
+
+                    xhr.onreadystatechange = function () {
+                        if (xhr.readyState === 4 && xhr.status === 200) {
+                            var data = JSON.parse(xhr.responseText);
+                            if (data.status === 200) {
+                                document.querySelector(".img").src =
+                                    "http://www.liulongbin.top:3006" + data.url;
+                            } else {
+                                console.log(data.message);
+                            }
+                        }
+                    };
+                });
+            });
+        </script>
+    </head>
+    <body>
+        <!-- 文件选择框 -->
+        <input type="file" name="" class="file1" />
+        <!-- 上传文件按钮 -->
+        <button class="btn">上传文件</button>
+        <br />
+        <!-- 显示上传成功后的图片 -->
+        <img src=" " alt="" class="img" width="800" />
+
+        <!-- 进度条 -->
+        <div class="progress" style="width: 500px; margin: 50px 100px">
+            <div class="progress-bar bar" style="width: 0%">0%</div>
+        </div>
+    </body>
+</html>

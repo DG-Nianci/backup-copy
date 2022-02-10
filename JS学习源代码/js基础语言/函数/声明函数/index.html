@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <script>
+            //函数
+            //声明函数
+            // function 函数名() {
+            //     函数体;
+            // }
+            //函数名一般为动词
+            //函数不调用自己不执行
+            //调用函数
+            // 函数名();
+
+            //函数的参数 （形参和实参） 语法结构
+            // function 函数名(形参1, 形参2) {
+            //     //形式上的参数
+            //     函数体;
+            // }
+            // 函数名(实参1, 实参2); //实际的参数
+            //声明在函数的小括号里面的是形参  在函数调用的小括号里是实参
+
+            function num(name1, name2) {
+                alert(name1 * name2);
+            }
+            num(2, 6);
+
+            //函数表达式
+            // var 变量名 = function () {};
+            var fun = function () {
+                console.log(22222);
+            };
+            fun();
+            //函数表达式声明方式跟声明变量差不多，只不过变量里面存的是值 而函数表达式里面存的是函数
+            //函数表达式也可以进行传递参数
+        </script>
+    </head>
+    <body></body>
+</html>

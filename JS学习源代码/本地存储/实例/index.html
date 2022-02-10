@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <script>
+            window.addEventListener("load", function () {
+                var text = document.querySelector(".text");
+                var checkbox = document.querySelector(".checkbox");
+
+                if (localStorage.getItem("one")) {
+                    text.value = localStorage.getItem("one");
+                    checkbox.checked = true;
+                }
+                checkbox.addEventListener("change", function () {
+                    if (this.checked) {
+                        localStorage.setItem("one", text.value);
+                    } else {
+                        localStorage.removeItem("one");
+                    }
+                });
+            });
+        </script>
+    </head>
+    <body>
+        <input type="text" class="text" />
+        <input type="checkbox" class="checkbox" />记住用户名
+    </body>
+</html>

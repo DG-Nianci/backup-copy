@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <script>
+            //arguments的使用
+            //只有函数才有 arguments对象 而且每个函数都内置好了这个arguments
+            function fu() {
+                console.log(arguments);
+                console.log(arguments.length);
+                console.log(arguments[1]);
+                //我们可以用数组的方式遍历 arguments
+                for (var i = 0; i < arguments.length; i++) {
+                    console.log(arguments[i]);
+                }
+            }
+            fu(1, 2, 3, 5);
+            //伪数组 并不是真正意义上的数组
+            //具有数组的length属性
+            //按照索引的方式进行储存
+            //他没有真正数组的一些方式
+        </script>
+    </head>
+    <body></body>
+</html>

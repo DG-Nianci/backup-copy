@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <style>
+            #a1 {
+                width: 1000px;
+                height: 100px;
+                background: pink;
+                position: relative;
+                left: 0px;
+                right: 0px;
+                margin: 0px auto;
+                display: block;
+            }
+            #a2 {
+                width: 20px;
+                height: 20px;
+                text-align: center;
+                background: red;
+                position: absolute;
+                right: 0px;
+                top: 0px;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="a1">
+            <div id="a2">X</div>
+        </div>
+        <script>
+            var odiv = document.getElementById("a1");
+            var div = document.getElementById("a2");
+            div.onclick = function () {
+                odiv.style.display = "none";
+            };
+        </script>
+    </body>
+</html>

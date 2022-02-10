@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <script>
+            //创建一个new Array() 数组
+            // var arr = new Array(); //创建一个空数组
+            // var arr1 = new Array(2); //2表示数组长度为2 里面有两个空的数组元素
+            // var arr2 = new Array(2, 3, 5); //表示这是一个数组
+
+            //检测是否为数组
+            //（1）instanceof  运算符  可以检测是否为数组
+            function reverse(arr) {
+                if (arr instanceof Array) {
+                    var newArr = [];
+                    for (var i = arr.length - 1; i >= 0; i--) {
+                        newArr[newArr.length] = arr[i];
+                    }
+                    return newArr;
+                } else {
+                    return "请输入数组";
+                }
+            }
+            console.log(reverse([1, 2, 3]));
+            alert(reverse(1542));
+            //（2）Array.isArray(参数);   （有可能不兼容）
+            // console.log(Array.isArray(arr));
+
+            //添加删除数组元素的方法
+            //1、push() 在数组末尾添加一个或者多个数组元素
+            var arr1 = [1, 2, 3];
+            arr1.push(4, 5);
+            console.log(arr1);
+            //（1）push 是可以给数组追加新元素
+            //（2）push()参数直接写进括号里就可以
+            //（3）push完毕后返回的结果是新数组的长度
+            //（4）会改变原数组的长度
+
+            //2、unshift 在数组开头添加一个数组元素
+            arr1.unshift(10, 20);
+            console.log(arr1);
+            //（1）unshift 可以在数组开头添加数组元素
+            //（2）unshift() 也可以在括号里面直接写要添加到数组元素
+            //（3）unshift完毕后返回的结果是新数组的长度
+            //（4）会改变原数组的长度
+
+            //3、pop() 删除数组最后一个数组元素
+            console.log(arr1.pop());
+            console.log(arr1);
+
+            //（1）pop 可以删除数组最后一个数组元素，一次只能删除一个
+            //（2）pop()没有参数
+            //（3）pop完毕后返回的结果是删除的那个数组元素
+            //（4）会改变原数组的长度
+
+            //4、shift() 可以删除数组的第一个数组元素
+            console.log(arr1.shift());
+            console.log(arr1);
+
+            //（1）shift 可以删除数组第一个数组元素，一次只能删除一个
+            //（2）shift()没有参数
+            //（3）shift完毕后返回的结果是删除的那个数组元素
+            //（4）会改变原数组的长度
+
+            //数组排序
+            //1、翻转数组（reverse）
+            var arr2 = [1, 2, 3, 4];
+            arr2.reverse();
+            console.log(arr2);
+            //2、冒泡排序（sort）
+            var arr3 = [3, 5, 8, 1, 2];
+            arr3.sort(function (a, b) {
+                // return a - b; //升序排列
+                return b - a; //降序排列
+            });
+            console.log(arr3);
+
+            //数组索引
+            //indexOf（数组元素）返回该数组元素的索引号
+            //只返回第一个满足条件的索引号
+            //如果返回-1，则代表数组没有该元素
+            var arr4 = [1, 2, 3, 4];
+            alert(arr4.indexOf(2));
+            //lastIndexOf（数组元素）
+            //从后往前查
+            alert(arr4.lastIndexOf(4));
+
+            //数组转化为字符串
+            //1、toString() 将数组转换为字符串
+            var arr5 = [1, 2, 3];
+            console.log(arr5.toString());
+            //2、join(分隔符)
+            console.log(arr5.join("-"));
+        </script>
+    </head>
+    <body></body>
+</html>
